@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        /* 
+            id选择器 唯一
+            class选择器 一类
+            标签选择器 div p 
+            后代选择器
+            子代选择器 只能选中儿子 >
+            伪类选择器 a:hover 
+            相邻兄弟选择器 
+
+        
+        
+        
+        
+         */
+        /* 相邻兄弟选择器 */
+        /* .aa + .bb{
+            color: red;
+            background: pink;
+        } */
+
+
+        /* 群组选择器 */
+        .aa,.bb,.cc{
+            color: springgreen;
+            background: yellow;
+        }
+
+        /* 伪元素选择器 */
+        .dd::after{
+            content:"后面加东西";
+            color: blue;
+        }
+
+
+    
+    
+    
+    
+    
+    </style>
+</head>
+<body>
+    <div class="aa">aaa</div>
+    <div class="bb">bbb</div>
+    <div class="bb">bbb</div>
+    <p class="cc">bbb</p>
+    <div class="dd">zhaochuang</div>
+    
+    
+</body>
+</html>

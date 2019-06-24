@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        /* 
+        选择器优先级
+        style 内联样式优先级最高 1000
+        id id选择器 100
+        . class class选择器、伪类选择器 10
+        div 标签选择器、伪元素选择器 1
+         */
+
+
+        
+        /* 优先级相同 写在后边的会覆盖前边的  */
+        .aa{
+            color:tomato;
+        }
+        .bb{
+            color:teal;
+        }
+
+        
+    </style>
+</head>
+<body>
+    <div class="aa bb">
+        1111111111
+    </div>
+    
+</body>
+</html>
