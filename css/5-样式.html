@@ -33,11 +33,26 @@
             /* 去掉下划线 */
             text-decoration: none;
         }
+        a:link{color:crimson;} /*未被访问的链接*/
+        a:hover{color:darkblue;} /*鼠标滑过链接*/
+        a:active{color:darkgoldenrod;} /*正在点击的链接*/
+        a:visited{color:darkolivegreen;} /*访问过的链接*/
+
+
         .txt{
             font-size: 12px;
             font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
             font-weight:900;
             font-style: italic;
+
+
+        }
+        ul{
+            list-style: none;
+        }
+        li{
+            /* 鼠标滑过手状 */
+            cursor: pointer;
         }
         
     
@@ -54,6 +69,11 @@
     </div>
     <a href="#">aaaa</a>
     <div class="txt">我是一个好孩子乖孩子</div>
+    <ul>
+        <li>111</li>
+        <li>222</li>
+        <li>333</li>
+    </ul>
 
     
 
