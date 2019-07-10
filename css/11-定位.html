@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #div0{
+            width: 500px;
+            height: 500px;
+            background: #eee;
+            
+        }
+        #div1{
+            width: 150px;
+            height: 100px;
+            background: red;
+            float: left;
+        }
+        #div2{
+            width: 150px;
+            height: 100px;
+            background: green;
+            float: left;
+            /* relative相对定位
+                1.相对于原来初始位置
+                2.定位以后空间不释放
+            */
+            /* position: relative;
+            left:150px;
+            top: 100px; */
+
+
+            /* absolute绝对定位
+                1.相对于已定位的祖先元素 如果没有最近已定位的祖先元素 相对于body
+                2.定位后空间释放 */
+            /* position: absolute;
+            left: 150px;
+            top: 100px; */
+
+            /* 
+            fixed 固定定位
+            1.相对于浏览器的可视区
+            2.定位后空间释放
+            3.定位后宽度：内容撑的
+            
+             */
+            
+            
+        }
+        #div3{
+            width: 150px;
+            height: 100px;
+            background: blue;
+            float: left;
+        }
+        #div4{
+            background:pink;
+            position:fixed;
+            right:0;
+            top: 0;
+            
+        }
+    
+    </style>
+</head>
+<body style="height: 1000px">
+    <div id="div0">
+        <div id="div1"></div>
+        <div id="div2"></div>
+        <div id="div3"></div>
+    </div>
+    <div id="div4">加油加油</div>
+    
+</body>
+</html>
