@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #header{
+            /* width: 1280px; */
+            height: 120px;
+            /* background:blueviolet; */
+        }
+        .wrapper{
+            /* background: greenyellow; */
+            width: 1141px;
+            height: 120px;
+            line-height: 120px;
+            margin:0 auto;
+            position: relative;
+            
+
+        }
+        #header-logo{
+            margin-left: 100px;
+            margin-top:37px;
+            margin-bottom: 36px;
+
+
+        }
+        ul{
+            list-style: none;
+        }
+        .header-list{
+            float: right;
+            margin-right:300px;
+            
+
+        }
+        .header-list >li{
+            float: left;
+            height: 11px;
+            margin-left: 20px;
+            font-family: PTSans-Regular;
+            font-size: 15px;
+            color: hsla(0, 0%, 38%, 1);
+
+        }
+        .header-list-s{
+            margin-left: 20px;
+        }
+        #search{
+            width:130px;
+            height:30px;
+            background:rgba(241,243,246,1);
+            position: absolute;
+            right:100px;
+            top:45px;
+            display: inline-block;
+            border: none;
+        }
+        /* #search>span{
+            position: absolute;
+            left: 10px;
+            top: -45px;
+            font-family: PTSans-Italic;
+            font-size: 15px;
+            color: hsla(0, 0%, 64%, 1);
+        } */
+        #search::-webkit-input-placeholder{
+            font-family: PTSans-Italic;
+            font-size: 15px;
+            font-style: italic;
+            color: hsla(0, 0%, 64%, 1);
+
+        }
+        #search>img{
+            position: absolute;
+            right: 10px;
+            top: 10px;
+        }
+
+
+        #black-content{
+            /* width:1280px; */
+            height:460px;
+            background:rgba(49,51,62,1);
+            position: relative;
+        }
+        .content-word{
+            width:582px;
+            height:35px;
+            font-size:37px;
+            font-family:PTSans-Regular;
+            font-weight:400;
+            color:rgba(255,255,255,1);
+            margin: 47px 483px 378px 332px;
+            display: inline-block;
+
+        }
+        .content-button{
+            position: absolute;
+            right: 369px;
+            top: 54px;
+
+        }
+        #header-big{
+            position: absolute;
+            right: 112px;
+            bottom: 54px;
+        }
+        #learn-more{
+            position: absolute;
+            top: 67px;
+            right: 406px;
+            font-family: PTSans-Regular;
+            font-style: regular;
+            font-size: 18px;
+            color: hsla(0, 0%, 100%, 1);
+
+        }
+        #content-phone{
+            position: absolute;
+            top:130px;
+            left: 444px;
+        }
+        #white-content{
+            height: 492px;
+            background: green;
+
+        }
+        #left-arrow{
+            position: absolute;
+            top: 205px;
+            left: 200px;
+        }
+        #right-arrow{
+            position: absolute;
+            top:205px;
+            right: 200px;
+        }
+        #white-content{
+            height: 492px;
+            background: white;
+        }
+        .white-content-piece{
+            background: white;
+            width: 334px;
+            height: 492px;
+            position: relative;
+            float: left;
+            
+        }
+        .special-piece{
+            margin-left: 200px;
+        }
+        .white-content-piece > div{
+            width: 149px;
+            height: 28px;
+            font-family: PTSans-Regular;
+            color: hsla(0, 0%, 38%, 1);
+            padding-top: 50px;
+            padding-left: 117px;
+        }
+        #img-1{
+            width: 100px;
+            height: 100px;
+            margin-top:30px;
+            margin-left: 116px;
+        }
+        #img-2{
+            position: absolute;
+            left: 134px;
+            top: 131px;
+        }
+        #img-words{
+            position: absolute;
+            top: 250px;
+            left: 25px;
+
+        }
+       
+        #grey-content{
+            height: 500px;
+            background:rgba(226,231,237,1)
+        }
+        #small-title{
+            width:155px;
+            height:23px;
+            font-size:30px;
+            font-family:PTSans-Regular;
+            font-weight:400;
+            color:rgba(98,98,98,1);
+            margin-left: 200px;
+            padding-top: 20px;
+        }
+        #images-list{
+            width: 1000px;
+            height: 400px;
+            margin-left: 200px;
+            margin-top: 24px;
+            position: relative;
+        }
+        #images-list>li{
+            width: 250px;
+            height: 200px;
+            float: left;
+            
+
+        }
+        #bgwords{
+            width: 202px;
+            height: 72px;
+            position: absolute;
+            top:20px;
+            left: 24px;
+        }
+        #tangle{
+            position: absolute;
+            left: 181px;
+            top: 160px;
+        }
+        #link{
+            width: 19px;
+            height: 24px;
+            position: absolute;
+            left: 206px;
+            top: 168px;
+        }
+        #close-end{
+            height: 148px;
+            background:white;
+            position: relative;
+        }
+        #image-box{
+            margin-left: 351px;
+            margin-top: 24px;
+        }
+        #image-box img{
+            padding-right:40px;
+        }
+        #logo2{
+            margin:0;
+        }
+        #arrow-left{
+            position: absolute;
+            left: 201px;
+            top: 76px;
+        }
+        #arrow-right{
+            position: absolute;
+            right: 214px;
+            top: 76px;
+        }
+        #ending{
+            height: 176px;
+            background: hsla(231, 12%, 22%, 1);
+        }
+        #ending-words{
+                
+            margin-left: 200px;
+            margin-top: 40px;
+        }
+        .imagelist{
+            
+            float: right;
+            margin-right: 200px;
+        }
+        .imagelist li{
+            float: left;
+            padding-right: 15px;
+        }
+        
+
+        
+        
+        
+        
+
+        
+
+        
+
+        
+
+
+    
+    
+    
+    
+    </style>
+</head>
+<body >
+    <div id="header">
+        <div class="wrapper">
+            <img src="images/logo.png" id="header-logo" alt="">
+            <ul class="header-list">
+                <li>ABOUT<span class="header-list-s">|</span></li>
+                <li>SERVERS<span  class="header-list-s">|</span></li>
+                <li>WORKS<span class="header-list-s">|</span></li>
+                <li>BLOG<span class="header-list-s">|</span></li>
+                <li>CONTACT US</li>
+            </ul>
+            <input id="search" placeholder=" Search">
+                <span>Search</span>
+            </input>
+            <button>
+
+                    <img id="header-big" src="images/search icon.png">
+
+            </button>
+            
+            
+        </div>
+    </div>
+    <div id="black-content">
+        
+                <span class="content-word">We are a Creative Digital Agency</span>
+                <a href="#">
+                    <img class="content-button"src="images/Rounded Rectangle 1.png">
+                
+                    <div id="learn-more">Learn More</div>
+                </a>
+                <img  id="content-phone"src="images/iphone.png">
+                <img id="right-arrow" src="images/Shape 14.png">
+                <img id="left-arrow" src="images/Shape 14 copy.png">
+
+    </div>
+    <div id="white-content">
+        <div class="white-content-piece special-piece">
+                <div>Web Design</div>
+                <img id="img-1" src="images/Ellipse 1.png">
+                <img id="img-2" src="images/paint brush.png">
+                <img id="img-words" src="images/Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspen.png">
+        </div>
+        <div class="white-content-piece">
+                <div>Social Media</div>
+                <img id="img-1" src="images/Ellipse 2.png">
+                <img id="img-2" src="images/Shape 3.png">
+                <img id="img-words" src="images/Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspen.png">
+
+        </div>
+        <div class="white-content-piece">
+                <div>Mobile Apps</div>
+                <img id="img-1" src="images/Ellipse 3.png">
+                <img id="img-2" src="images/iPhone potrait.png">
+                <img id="img-words" src="images/Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspen.png">
+
+        </div>
+    </div>
+    <div id="grey-content">
+        <div id="small-title">Our Works</div>
+        <ul id="images-list">
+            <li><img src="images/img bg.png"></li>
+            <li><img src="images/Layer 17.png"></li>
+            <li><img src="images/Layer 18.png"></li>
+            <li><img src="images/Layer 19.png"></li>
+            <li><img src="images/Layer 20.png"></li>
+            <li><img src="images/Layer 21.png"></li>
+            <li><img src="images/Layer 22.png"></li>
+            <li><img src="images/Layer 23.png"></li>
+            <img id="bgwords" src="images/This is Image Hover Lorem ipsum dolor sit amet, consectetur adi.png">
+            <img id="tangle" src="images/Rectangle 3.png">
+            <img id="link" src="images/link.png">
+        </ul>
+
+    </div>
+
+    <div id="close-end">
+            <div id="small-title">Clients</div>
+            <div id="image-box">
+                <img id="logo1" src="images//logo1.png">
+                <img id="logo2"  src="images//logo2.png">
+                <img id="logo2"  src="images//logo3.png">
+                <img id="logo1"  src="images//logo4.png">
+
+
+
+            </div>
+            <img id="arrow-left"src="images/arrow left.png">
+            <img id="arrow-right" src="images/arrow right.png">
+
+    </div>
+    <div id="ending">
+        <img id="ending-words" src="images/Home    _    About    _    Services    _    Work    _    Blog  .png" alt=""><br>
+        <img id="ending-words" src="images/The logos used in the design are the property of their respec.png">
+        <ul class="imagelist">
+            <Li><img src="images/facebook.png"></Li>
+            <Li><img src="images/google-plus.png"></Li>
+            <Li><img src="images/twitter.png"></Li>
+            <Li><img src="images/dribbble.png"></Li>
+            <Li><img src="images/pinterest.png"></Li>
+            <Li><img src="images/linkedin.png"></Li>
+        </ul>
+    </div>
+
+    
+</body>
+</html>
