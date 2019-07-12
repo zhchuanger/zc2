@@ -1,0 +1,37 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    font: 12px/1.5 tahoma,arial,"\5b8b\4f53";
+    -webkit-font-smoothing: antialiased;
+}
+a{
+    text-decoration: none;
+}
+ul{
+    list-style: none;
+}
+.wrapper{
+    width: 1230px;
+    height: 32px;
+    /* background:greenyellow; */
+    margin: 0 auto;
+}
+.list-arrow::after{
+    content: "";
+    width: 0;
+    height: 0;
+    border:3px solid transparent;
+    border-top-color: #bbb;
+    font-size: 0;
+    line-height: 0;
+    position: absolute;
+    right: 8px;
+    top:15px; 
+    
+
+}
+.list-arrow{
+    position: relative;
+}
