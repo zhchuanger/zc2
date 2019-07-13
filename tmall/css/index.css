@@ -27,3 +27,41 @@
 .header-list > li > a{
     color:#fff;
 }
+.list-arrow{
+    position: relative;
+    /* background: #eee; */
+}
+.sub-list{
+    position: absolute;
+    left: 0;
+    top:32px;
+    background: #fff;
+    padding: 10px;
+    border:1px solid #ccc;
+    border-top:none;
+    display: none;
+
+    
+}
+.sub-list-tb{
+    width: 72px;
+    line-height: 20px;
+}
+.sub-list > li >a{
+    color:#999;
+}
+.list-arrow:hover .sub-list{
+    display: block;
+}
+.list-arrow:hover{
+    background: #fff;
+}
+.list-arrow:hover >a{
+    color:#ff0036;
+    
+}
+.sub-list .list-tb-baby:hover{
+    color:#ff0036;
+    text-decoration: underline;
+
+}
