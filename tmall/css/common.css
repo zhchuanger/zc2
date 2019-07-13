@@ -18,8 +18,7 @@ ul{
     /* background:greenyellow; */
     margin: 0 auto;
 }
-.list-arrow::after{
-    content: "";
+.list-arrow .arrow{
     width: 0;
     height: 0;
     border:3px solid transparent;
@@ -28,7 +27,8 @@ ul{
     line-height: 0;
     position: absolute;
     right: 8px;
-    top:15px; 
+    top:15px;
+    transition: transform 0.2s ease; 
     
 
 }
