@@ -14,9 +14,10 @@ ul{
 }
 .wrapper{
     width: 1230px;
-    height: 32px;
+    /* height: 32px; */
     /* background:greenyellow; */
     margin: 0 auto;
+    /* overflow: hidden; */
 }
 .list-arrow .arrow{
     width: 0;

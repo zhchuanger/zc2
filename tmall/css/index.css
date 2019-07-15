@@ -4,6 +4,7 @@
     background: #a9180a;
     border-bottom: 1px solid #a9180a;
     font-family: "Microsoft YaHei",tahoma,arial,'Hiragino Sans GB','\5b8b\4f53',sans-serif;
+    
 
 }
 .header-login{
@@ -41,9 +42,7 @@
     padding: 10px;
     border:1px solid #ccc;
     border-top:none;
-    display: none;
-
-    
+    display: none; 
 }
 .sub-list-tb{
     width: 72px;
@@ -157,6 +156,8 @@
     display: none;;
     width: 1180px;
     height: 145px;
+    z-index:4;
+
 
 }
 .list-arrow:hover .sub-list-lead{
@@ -223,6 +224,119 @@
 .search-list .list-hot a{
     color: #ff0036;
 }
+
+.nav li{
+    float: left;
+
+}
+.nav{
+    padding-left: 200px;
+    width: 1030px;
+    overflow: hidden;
+
+}
+.nav a>img{
+    width: 100px;
+    height: 30px;
+    margin-top:3px;
+}
+.nav a{
+    color: #333;
+    font-size: 16px;
+    font-weight: 500px;
+    display: block;
+    height: 35px;
+    line-height: 35px;
+    cursor: pointer;
+    font-family: "Microsoft YaHei",SimSun,'\5b8b\4f53',sans-serif;
+    padding:0 8px;
+}
+.logo-box{
+    overflow: hidden;
+}
+.slide-box{
+    height: 500px;
+    /* background:yellow; */
+    border-top:2px solid #ff0036;
+}
+.slide-wrapper{
+    height: 500px;
+    /* background: blueviolet; */
+    position: relative;
+}
+.menu-box{
+    width: 200px;
+    height: 537px;
+    /* background: #ff0036; */
+    position: absolute;
+    top:-37px;
+
+    
+}
+.menu-box h2{
+    background: #ff0036;
+    height: 36px;
+    font-size: 16px;
+    padding-left: 45px;
+    color: #fff;
+    line-height: 36px;
+}
+.img-box img{
+    width: 1230px;
+    height: 500px;
+}
+.menu-list{
+    position: relative;
+}
+.menu-list li{
+    background-color: rgba(0,0,0,.55);
+    height: 31.2px;
+    display: block;
+    line-height: 31.2px;
+    font-size: 14px;
+    padding-left: 13px;
+    
+}
+.menu-list li a{
+    color:#fff;
+    font-family: "Microsoft YaHei",SimSun,'\5b8b\4f53',sans-serif;
+}
+.menu-list span{
+    
+    margin-right: 8px;
+    height: 31px;
+    line-height: 31px;
+    line-height: 31px;
+    font-size: 16px;
+    color: #ffffff;
+}
+.menu-list li:hover{
+    background-color: #fff;
+
+}
+.menu-list li:hover span,.menu-list li:hover a{
+    color: #333;
+}
+.menu-box .menu-list:nth-child(1):hover>a{
+    color:aqua;
+}
+.menu-list-detail{
+    width: 852px;
+    height: 500px;
+    background: #fff;
+    position: absolute;
+    top:1px;
+    left:200px;
+    /* display: none; */
+    position: relative;
+    top: -498px;
+    left: 200px
+}
+.menu-list li:hover ~.menu-list-detail{
+    display: block;
+}
+
+
 
 
 

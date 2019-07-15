@@ -1,0 +1,95 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+ul{
+    list-style: none;
+}
+.header{
+    height: 0.48rem;
+    background:#fff;
+    display: flex;
+    padding:0.2rem;
+    
+    
+}
+.search{
+    width: 6.60rem;
+    height: 0.5rem;
+    border-radius: 0.25rem;
+    border: none;
+    outline: none;
+    text-indent: 0.61rem;
+    font-size:0.28rem;
+    font-family:PingFangSC-Regular;
+    font-weight:400;
+    background: #eeeeee;
+    background:  #eeeeee url(../images/fangdajing.png) 0.2rem 0.1rem no-repeat;
+    background-size: 0.3rem 0.3rem;
+}
+.lingdang-logo{
+    width: 0.28rem;
+    height: 0.3rem;
+    margin-top: 0.1rem;
+    margin-left: 0.2rem;
+}
+.photo-content{
+    width: 7.5rem;
+    height: 3.9rem;
+    display: block;
+}
+.center-content{
+    position: relative;
+}
+.zhibo{
+    width: 1rem;
+    height: 0.4rem;
+    position: absolute;
+    top: 0.3rem;
+    left: 0.3rem;
+    
+}
+.content-logo{
+    height: 3.32rem;
+    background: green;
+    position: relative;
+}
+.content-logo-list{
+    height: 1.6rem;
+    /* background: red; */
+    display: flex;
+    margin-left:0.5rem;
+    
+}
+.content-logo-list img{
+    width: 0.8rem;
+    height: 0.8rem;
+    margin-right: 0.6rem;
+}
+.content-logo-word a{
+    color:#333333;
+    width: 1rem;
+    height: 0.2rem;
+    font-size:0.2rem;
+    font-family:PingFangSC-Regular;
+    font-weight:400;
+    text-decoration: none;
+}
+.content-logo-word{
+    position: relative;
+    top: -1.2rem;
+}
+.content-logo-word .special-piece{
+    margin-left: -0.1rem;
+}
+.content-logo-word li{
+    float: left;
+    padding: 0 0.19rem 0 0.4rem;
+}
+.guanggao{
+    width: 7.1rem;
+    height: 1.4rem;
+    position: absolute;
+    left: 0.2rem;
+    bottom: 0.2rem;
+}
