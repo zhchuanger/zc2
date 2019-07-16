@@ -291,7 +291,7 @@
 }
 .menu-list li{
     background-color: rgba(0,0,0,.55);
-    height: 31.2px;
+    height: 31.3px;
     display: block;
     line-height: 31.2px;
     font-size: 14px;
@@ -328,14 +328,104 @@
     position: absolute;
     top:1px;
     left:200px;
-    /* display: none; */
-    position: relative;
-    top: -498px;
-    left: 200px
+    display: none;
+    z-index:5;
 }
-.menu-list li:hover ~.menu-list-detail{
+.menu-list li:hover .menu-list-detail{
     display: block;
 }
+.strangle{
+    /* width: 243px; */
+    height: 8px;
+    /* background: darkmagenta; */
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    bottom:30px;
+    left:566px;
+}
+.strangle li{
+
+    width: 25px;
+    height: 5px;
+    /* background: darksalmon; */
+    background: #000;
+    cursor: pointer;
+    opacity: .3;
+    margin-left: 7px;
+}
+.content-box{
+    height: 370px;
+    background: #eee;
+    padding-top: 1px;
+
+}
+.content-wrapper{
+    /* background: deeppink; */
+    height: 370px;
+    margin-top:30px;
+}
+.wrapper-piece{
+    width: 234px;
+    height: 370px;
+    background: aquamarine;
+    
+    float: left;
+}
+.wrapper-piece-title{
+    width: 234px;
+    height: 54px;
+    background: #fff;
+    line-height: 54px;
+    font-family: "Microsoft YaHei",SimSun,'\5b8b\4f53',sans-serif;
+    position: relative;
+}
+.wrapper-piece-title .cn{
+    font-size:18px;
+    font-weight: 700;
+    color: #333;
+    margin-left:10px;
+}
+.wrapper-piece-title .en{
+    font-size: 14px;
+    font-weight: 700;
+    margin-left: 10px;
+}
+.wrapper-piece-title img{
+    width: 18px;
+    height: 18px;
+    position: absolute;
+    top: 19px;
+    right: 14px;
+}
+.wrapper-piece>img{
+    width: 234px;
+    height: 316px;
+}
+.wrapper-piece2{
+    width: 485px;
+    height: 370px;
+    background: chartreuse;
+    float: left;
+    margin-left: 13px;
+    
+}
+.wrapper-piece-title2{
+    width: 485px;
+    height: 54px;
+
+}
+.wrapper-piece2>img{
+    width: 485px;
+    height: 316px;
+}
+.wrapper-piece2 a{
+    font-size: 16px;
+    color:#666;
+    margin-left: 193px;
+
+}
+
 
 
 

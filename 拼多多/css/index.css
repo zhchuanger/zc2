@@ -173,6 +173,8 @@ ul{
     font-weight:400;
     color:rgba(51,51,51,1);
     overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
     margin-top: -0.1rem;
 
 }
@@ -180,7 +182,7 @@ ul{
     width: 2.33rem;
     height: 0.54rem;
     color:rgba(239,28,0,1);
-    font-size: 0.24rem;
+    font-size: 0.28rem;
     font-weight:400;
     line-height: 0.54rem;
 }
@@ -245,6 +247,7 @@ ul{
     float: left;
     padding: 0 0.48rem;
     /* color: #ff0036 */
+    color: rgba(153, 153, 153, 1);
     
     
 }
