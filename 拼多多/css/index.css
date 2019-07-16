@@ -98,9 +98,7 @@ ul{
     /* background: blueviolet; */
     border-top:0.1rem solid #eeeeee;
     
-    
 }
-
 .content-block .block-title{
     height: 1rem;
     /* background: blue; */
@@ -176,7 +174,6 @@ ul{
     text-overflow: ellipsis;
     white-space: nowrap;
     margin-top: -0.1rem;
-
 }
 .girl-price{
     width: 2.33rem;
@@ -236,9 +233,6 @@ ul{
     background: #fff;
     border-top: 0.01rem solid rgba(221, 221, 221, 1);
 }
-    
-
-
 .bottom-box-icon li{
     /* width: 1.5rem; */
     height: 0.99rem;
@@ -248,8 +242,7 @@ ul{
     padding: 0 0.48rem;
     /* color: #ff0036 */
     color: rgba(153, 153, 153, 1);
-    
-    
+
 }
 .bottom-box-icon span{
     font-size: 0.5rem;
