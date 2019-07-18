@@ -366,9 +366,12 @@
 .wrapper-piece{
     width: 234px;
     height: 370px;
-    background: aquamarine;
+    /* background: aquamarine; */
     
     float: left;
+}
+.content-wrapper img:hover{
+    opacity: 0.65;
 }
 .wrapper-piece-title{
     width: 234px;
@@ -436,6 +439,51 @@
     margin-right: 1px;
     margin-top: 1px;
     float: left;
+    position: relative;
+}
+.content-logo-piece .img-change{
+    width: 122px;
+    height: 108px;
+    margin-right: 1px;
+    /* margin-top: -80px; */
+    background: #000;
+    /* z-index: 99; */
+    opacity: 0.85;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+    top: 0;
+
+
+}
+.img-change span{
+    color: #fff;
+    font-size: 12px;
+    font-family: "Microsoft YaHei",SimSun,'\5b8b\4f53',sans-serif;
+    margin-top: 35px;
+    display: block;
+}
+
+
+.content-logo-piece:hover .img-change{
+    opacity: 0.85;
+
+}
+.change-enter{
+    width: 63px;
+    height: 18px;
+    border-radius: 9px;
+    color: #fff;
+    font-size: 12px;
+    background: #ff0036;
+    /* text-align: center; */
+    line-height: 16px;
+    margin: 0 auto;
+    margin-top: -20px;
+
 }
 .content-logo-piece img{
     width: 100.04px;
@@ -548,10 +596,13 @@
     float: left;
 }
 .imag-list .img-list-right{
-    width: 234px;
-    height: 300px;
+    width: 232px;
+    height: 298px;
     background: #fff;
     float: left;
+    text-align: center;
+    position: relative;
+    border:1px solid transparent;
 }
 .left1{
     margin-left:15px;
@@ -563,6 +614,45 @@
 .left3{
     margin-left: 0px;
 
+}
+.img-list-right img{
+    width: 185px;
+    height: 185px;
+    margin-top:20px;
+    opacity: 1;
+}
+.item-title{
+    width: 135px;
+    height: 40px;
+    font-size: 14px;  
+    font-family: "Microsoft YaHei",SimSun,'\5b8b\4f53',sans-serif;
+    overflow: hidden;
+    white-space: wrap;
+    text-overflow: ellipsis;
+    margin: 8px auto;
+}
+.item-price{
+    font-size:18px;
+    color:#ff0036;
+    margin:10px auto;
+    line-height: 18px;
+
+}
+/* .transparent-change{
+    width: 234px;
+    height: 300px;
+    background: #fff;
+    opacity: 0;
+    position: absolute;
+    top:0;
+    left:0;
+} */
+.img-list-right:hover{
+    border:1px solid #ff0036;
+} 
+.img-list-right:hover img{
+    opacity: 0.7;
+    transition: opacity 0.1s ease;
 }
 
 
