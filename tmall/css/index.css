@@ -595,7 +595,7 @@
     background: #fff;
     float: left;
 }
-.imag-list .img-list-right{
+.img-list-right{
     width: 232px;
     height: 298px;
     background: #fff;
@@ -654,6 +654,10 @@
     opacity: 0.7;
     transition: opacity 0.1s ease;
 }
+.twoimag{
+    background: aquamarine;
+}
+
 
 
 
