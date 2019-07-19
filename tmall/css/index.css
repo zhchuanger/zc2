@@ -532,7 +532,7 @@
     height: 618px;
     /* background: darksalmon; */
 }
-.content-sp .content-sp-imag .imag-left img{ 
+.imag-left .dove{ 
     width: 235px;
     height: 618px;
 }
@@ -609,7 +609,7 @@
     float: right;
 }
 .imag-list .img-list-left{
-    width: 484px;
+    width: 482px;
     height: 300px;
     background: #fff;
     float: left;
@@ -625,10 +625,10 @@
 }
 
 .left1{
-    margin-left:15px;
+    margin-left:14px;
 }
 .left2{
-    margin-left: 15px;
+    margin-left: 14px;
     margin-top: 18px;
 }
 .left3{
@@ -752,13 +752,17 @@
 }
 .floor-title{
     font-size: 18px;
-    color:#000;
+    color: #000;
     margin-left: 14px;
+    margin-top: -2px;
 }
 .floor-sub-name{
     
     margin-left: 10px;
     font-size: 14px
+}
+.next-img{
+    margin-left:14px;
 }
 
 
