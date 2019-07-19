@@ -764,6 +764,53 @@
 .next-img{
     margin-left:14px;
 }
+.fix-black{
+    height: 100%;
+    width: 35px;
+    background: #000;
+    position: absolute;
+    right: 0;
+    top:0
+}
+.guess-like{
+    /* background: #96eab6; */
+    height: 43px;
+    margin-top: 30px;
+    margin: 0 zuto;
+    line-height: 43px;
+    text-align: center;
+    position: relative;
+}
+.text-cn{
+    font-size: 18px;
+    color:#666;
+}
+.text-cn .icon-xihuan{
+    font-size: 20px;
+    color: #ff0036;
+}
+.text-cn::after{
+    content: '';
+    width: 30px;
+    height: 1px;
+    background-color: #979797;
+    position: absolute;
+    top: 22px;
+    /* left: 46px; */
+    margin-left: 10px;
+    
+}
+.text-cn::before{
+    content: '';
+    width: 30px;
+    height: 1px;
+    background-color: #979797;
+    position: absolute;
+    top: 22px;
+    margin-left: -42px;
+    
+}
+
 
 
 

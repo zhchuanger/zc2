@@ -5,6 +5,8 @@
 body{
     font: 12px/1.5 tahoma,arial,"\5b8b\4f53";
     -webkit-font-smoothing: antialiased;
+    position: relative;
+    height: 5000px;
 }
 a{
     text-decoration: none;
