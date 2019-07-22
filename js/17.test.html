@@ -58,9 +58,9 @@
 
             // var week =  prompt("请输入星期数字");
             // week*=1;
-            // switch(week){
+            // switch(week){//值和类型都相同
             //     case 0:
-            //         console.log("星期天");
+            //         alert("星期天");
             //         break;
             //     case 1:
             //         console.log("星期一");
@@ -80,7 +80,6 @@
             //     case 6:
             //         console.log("星期六");
             //         break;
-                
             // }
 
             
@@ -93,20 +92,40 @@
             //     console.log(sum);
             // }
 
-            fn();
-            function fn(){
-                var result = 0;
-                for(var j = 1;j<=10;j++){
-                    var sum =1;
-                    for(var i = 1;i<=j;i++){
+
+            // function fn(n){
+            //     sum = 1;
+            //     for(var i = 1;i<=n;i++){
+            //         sum = sum*i;
+            //     }
+            //     return sum;
+
+            // }
+            // // fn(5);
+            // // console.log(sum);
+            // var count = 0;
+            // for(var j = 1;j<=10;j++){
+            //     count+=fn(j);
+            // }
+            // console.log(count);
+            
+            
+
+
+        //     fn();
+        //     function fn(){
+        //         var result = 0;
+        //         for(var j = 1;j<=10;j++){
+        //             var sum =1;
+        //             for(var i = 1;i<=j;i++){
                         
-                        sum = sum*i;
-                }
-                result = result + sum;
+        //                 sum = sum*i;
+        //         }
+        //         result = result + sum;
                 
-            }
-                console.log(result);
-        }
+        //     }
+        //         console.log(result);
+        // }
 
                 // fn();
                 // function fn(){
@@ -126,8 +145,75 @@
                 // }
 
 
-            
+                    // 双重for循环 第一层代表行数 第二层代表列数
+                    // for(var i=1;i<=5;i++){
+                    //     for(var j = 1;j<=i;j++){
+                    //         document.write(j+"&nbsp;");
+                    //     }
+                    //     document.write("</br>");
+                    // }
 
+
+
+                // 在页面上编程输出100~1000之间的所有素数，并要求每行显示6个素数。
+                        // function isPrime(n){
+                        //     for(var i=2;i<=Math.sqrt(n);i++){
+                        //         if(n%i ==0){
+                        //             return false;
+                        //         }
+                        //     }
+                        //     return true;
+                        // }
+    
+                        // var count = 0;
+                        // for(var j=100;j<=1000;j++){
+                        //     if(isPrime(j)) {
+                        //         document.write(j+",");
+                        //         count++;
+                        //         if(count%6==0){
+                        //             document.write("</br>");
+                        //         }
+                        //     }
+                        // }
+                            /*
+                            7.斐波纳契（Fibonacci）数列的第一项是1，第二项是1，
+                            以后各项都是前两项的和。试用递归函数和非递归函数各编写一个程序，
+                            b求斐波纳契数列第N项的值。
+                            
+                            */ 
+                        // function fn(n){
+                        //     if(n<=2){
+                        //         return 1;
+                        //     }
+                        //     return arguments.callee(n-1) + arguments.callee(n-2);
+                        // }
+                        // console.log(fn(5));
+                        
+                        var str = "";
+                        var sum = 0;
+                        var win = 0;
+                        function play(){
+                            str = "";
+                            var x = Math.floor(Math.random()*9+1);
+                            var y = Math.floor(Math.random()*9+1);
+                            var z = Math.floor(Math.random()*9+1);
+                            str+=x;
+                            str+=y;
+                            str+=z + "\n";
+                            if(x == 8 || y ==8 ||z==8){
+                                 str  +="赢";
+                                win++;
+                            }else{
+                                str +="输";
+                            }
+                            sum++;
+                            str+=(win/sum*100)+"%";
+                            
+                        }
+                        do{
+                            play();
+                        }while(confirm(str));
+                        
 
             
 
