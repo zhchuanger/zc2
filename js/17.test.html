@@ -189,30 +189,37 @@
                         // }
                         // console.log(fn(5));
                         
-                        var str = "";
-                        var sum = 0;
-                        var win = 0;
-                        function play(){
-                            str = "";
-                            var x = Math.floor(Math.random()*9+1);
-                            var y = Math.floor(Math.random()*9+1);
-                            var z = Math.floor(Math.random()*9+1);
-                            str+=x;
-                            str+=y;
-                            str+=z + "\n";
-                            if(x == 8 || y ==8 ||z==8){
-                                 str  +="赢";
-                                win++;
-                            }else{
-                                str +="输";
-                            }
-                            sum++;
-                            str+=(win/sum*100)+"%";
+                        // var str = "";
+                        // var sum = 0;
+                        // var win = 0;
+                        // function play(){
+                        //     str = "";
+                        //     var x = Math.floor(Math.random()*9+1);
+                        //     var y = Math.floor(Math.random()*9+1);
+                        //     var z = Math.floor(Math.random()*9+1);
+                        //     str+=x;
+                        //     str+=y;
+                        //     str+=z + "\n";
+                        //     if(x == 8 || y ==8 ||z==8){
+                        //          str  +="赢";
+                        //         win++;
+                        //     }else{
+                        //         str +="输";
+                        //     }
+                        //     sum++;
+                        //     str+=(win/sum*100)+"%";
                             
-                        }
-                        do{
-                            play();
-                        }while(confirm(str));
+                        // }
+                        // do{
+                        //     play();
+                        // }while(confirm(str));
+
+                        
+                        /*4.	编制一个从字符串中收集数字字符（"0"',"1"，…"9"）
+                            的函数CollectDigits(s)，它从字符串s中顺序取出数字，
+                            并且合并为一个独立的字符串作为函数的返回值。
+                            例如函数调用CollectDigits("1abc23def4"）的返回值是字符串"1234"
+                        */ 
                         
 
             
