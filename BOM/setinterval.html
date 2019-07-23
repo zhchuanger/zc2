@@ -30,10 +30,25 @@
         // }
 
 
-        var timer = setTimeout(function(){
-            console.log(Math.random());
+        // var timer = setTimeout(function(){
+        //     console.log(Math.random());
 
-        },1000);
+        // },1000);
+
+
+        var timer =  setInterval(function(){
+            console.log("zc"); 
+        },1000)
+        var btn = document.getElementById("btn");
+        btn.onclick = function(){
+            clearInterval(timer);
+        }
+
+
+
+
+
+        
 
     
     
