@@ -13,55 +13,56 @@
         ul{
             list-style: none;
         }
+
         #container{
-            margin:200px;
+            margin: 0 385px;
+            position: relative;
         }
         #btns{
-            overflow: hidden;
+            position: absolute;
+            top: 260px;
+            right: 20px;
         }
         #btns li{
-            background: #F1F1F1;
-            width: 50px;
-            height: 30px;
+            width: 20px;
+            height: 20px;
+            background:#22141480;
+            color: #fff;
             float: left;
-            border:1px solid  #898989;
             margin-right: 10px;
-            line-height: 30px;
+            border-radius: 25%;
+            line-height: 20px;
             text-align: center;
-            border-bottom: transparent;
             cursor: pointer;
         }
-        #container #btns .active{
-            background: yellowgreen;
-            color:#fff;
-        }
-
-        #content{
-            width: 250px;
-            height: 200px;
-            background: #F1F1F1;
-            border:1px solid #898989;
+        #btns .active{
+            background: #ff0036;
         }
         #content div{
             display: none;
         }
-        #content .selected{
+        #content  .selected{
             display: block;
-
         }
     </style>
 </head>
 <body>
     <div id="container">
+        
         <ul id="btns">
-            <Li class="active">时事</Li>
-            <Li>体育</Li>
-            <Li>娱乐</Li>
+            <Li class="active">1</Li>
+            <Li>2</Li>
+            <Li>3</Li>
+            <Li>4</Li>
+            <Li>5</Li>
+
         </ul>
         <div id="content">
-            <div class="selected">时事</div>
-            <div>体育</div>
-            <div>娱乐</div>
+            <div class="selected"><img src="img/1.jpg"></div>
+            <div><img src="img/2.jpg"></div>
+            <div><img src="img/3.jpg"></div>
+            <div><img src="img/4.jpg"></div>
+            <div><img src="img/5.jpg"></div>
         </div>
     </div>
     <script>
@@ -70,25 +71,17 @@
         var ali = oUl.getElementsByTagName("li");
         var oContent = document.getElementById("content");
         var aDiv = oContent.getElementsByTagName("div");
-
-        for(var i = 0;i < ali.length ;i++){
+        for(var i=0;i<ali.length;i++){
             ali[i].index = i;
             ali[i].onclick = function(){
-                for(var j = 0;j<ali.length;j++){
+                for(var j=0;j<ali.length;j++){
                     ali[j].className = "";
                     aDiv[j].className = "";
                 }
                 this.className = "active";
                 aDiv[this.index].className = "selected";
-
             }
-            
         }
-
-
-
-
-
         
         
         
