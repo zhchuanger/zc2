@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    
+    
+    
+    </style>
+</head>
+<body>
+    <button id="btn">click</button>
+    <ul id="uli">
+        <Li>111</Li>
+        <Li>222</Li>
+        <Li>333</Li>
+    </ul>
+
+    <!-- 事件委托
+        1.后生成元素的事件绑定问题；2.绑定的事件少
+        将事件绑在父元素身上。点击子元素会发生事件冒泡 触发父元素的点击事件
+        通过事件源(e.target)判断是否是要绑定的子元素 执行相应的处理函数
+    -->
+    <script>
+        var obtn = document.getElementById("btn");
+        var oul = document.getElementById("uli");
+        oul.onclick  = function(e){
+            if(e.target == "li"){
+                console.log(e.target.innerHTML);
+            }
+        }
+        obtn.onclick = function(){
+            //创建DOM元素
+            var oli = document.createElement("li");
+            oli.innerHTML = Math.random();
+            //在ul内部的后面加入元素
+            oul.appendChild(oli);
+
+
+        }
+    
+    
+    
+    </script>
+    
+    
+</body>
+</html>
