@@ -18,11 +18,25 @@
             margin: 0 auto;
             position: relative;
             width: 750px;
+            overflow: hidden;
+            height: 291px;
+        }
+        #content{
+            width: 3750px;
+            overflow: hidden;
+            position: absolute;
+            top:0;
+            left:0;
+            transition: left 1s linear;
+        }
+        #content div{
+            float: left;
         }
         #btns{
             position: absolute;
             bottom: 10px;
             right: 10px;
+            z-index: 1;
         }
         #btns li,#arrow-box li{
             width: 20px;
@@ -39,16 +53,12 @@
         #btns .active{
             background: #ff0036;
         }
-        #content div{
-            display: none;
-        }
-        #content  .selected{
-            display: block;
-        }
+
         #arrow-box{
             position: absolute;
             left:10px;
             bottom:10px;
+            z-index: 1;
         }
     </style>
 </head>
@@ -74,63 +84,48 @@
         </div>
     </div>
     <script>
-
+        var oContainer = document.getElementById("container");
         var oUl = document.getElementById("btns");
-        var ali = oUl.getElementsByTagName("li");
+        var aLi = oUl.getElementsByTagName("li");
         var oContent = document.getElementById("content");
-        var aDiv = oContent.getElementsByTagName("div");
+        var aDiv = oContent.getElementsByTagName("div"); 
         var oPrev = document.getElementById("prev");
         var oNext = document.getElementById("next");
         var iNow = 0;
-        for(var i=0;i<ali.length;i++){
-            ali[i].index = i;
-            ali[i].onclick = function(){
-                for(var j=0;j<ali.length;j++){
-                    ali[j].className = "";
-                    aDiv[j].className = "";
-                }
-                this.className = "active";
-                aDiv[this.index].className = "selected";
+        for(var i =0;i<aLi.length;i++){
+            aLi[i].index = i;
+            aLi[i].onclick = function(){
+                change(this.index);
+                iNow = this.index;
+
             }
         }
-
-
-
+        function change(idx){
+            for(var j =0;j<aLi.length;j++){
+                    aLi[j].className = "";
+                }
+                aLi[idx].className = "active";
+                oContent.style.left = -idx*750 + "px";
+        }
         oNext.onclick = function(){
             iNow++;
-            if(iNow == ali.length){
+            if(iNow ==aLi.length){
                 iNow =0;
             }
-            for(var k =0;k<ali.length;k++){
-                ali[k].className = "";
-                aDiv[k].className = "";
-            }
-            ali[iNow].className = "active";
-            aDiv[iNow].className = "selected";
+            change(iNow);
         }
-
-
         oPrev.onclick = function(){
             iNow--;
-            if(iNow ==-1){
-                iNow =ali.length - 1;
+            if(iNow==-1){
+                iNow = aLi.length - 1;
             }
-            for(var k =0;k<ali.length;k++){
-                ali[k].className = "";
-                aDiv[k].className = "";
-            }
-            ali[iNow].className = "active";
-            aDiv[iNow].className = "selected";
+            change(iNow);
         }
         
 
 
 
-        
-        
 
-        
-        
     </script>
     
 </body>

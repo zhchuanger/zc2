@@ -74,63 +74,62 @@
         </div>
     </div>
     <script>
-
+        var oContainer = document.getElementById("container");
         var oUl = document.getElementById("btns");
-        var ali = oUl.getElementsByTagName("li");
+        var aLi = oUl.getElementsByTagName("li");
         var oContent = document.getElementById("content");
-        var aDiv = oContent.getElementsByTagName("div");
+        var aDiv = oContent.getElementsByTagName("div"); 
         var oPrev = document.getElementById("prev");
         var oNext = document.getElementById("next");
+        // 记录当前显示的索引
         var iNow = 0;
-        for(var i=0;i<ali.length;i++){
-            ali[i].index = i;
-            ali[i].onclick = function(){
-                for(var j=0;j<ali.length;j++){
-                    ali[j].className = "";
-                    aDiv[j].className = "";
-                }
-                this.className = "active";
-                aDiv[this.index].className = "selected";
+        for(var i =0;i<aLi.length;i++){
+            aLi[i].index = i;
+            aLi[i].onclick = function(){
+                iNow = this.index;
+                change(this.index);
             }
         }
-
-
 
         oNext.onclick = function(){
             iNow++;
-            if(iNow == ali.length){
-                iNow =0;
+            if(iNow==aLi.length){
+                iNow = 0;
             }
-            for(var k =0;k<ali.length;k++){
-                ali[k].className = "";
-                aDiv[k].className = "";
-            }
-            ali[iNow].className = "active";
-            aDiv[iNow].className = "selected";
+            change(iNow);
         }
-
 
         oPrev.onclick = function(){
             iNow--;
             if(iNow ==-1){
-                iNow =ali.length - 1;
+                iNow = aLi.length - 1;
             }
-            for(var k =0;k<ali.length;k++){
-                ali[k].className = "";
-                aDiv[k].className = "";
-            }
-            ali[iNow].className = "active";
-            aDiv[iNow].className = "selected";
+            change(iNow);
         }
+
+        function change(idx){
+            for(var j = 0;j<aLi.length;j++){
+                    aLi[j].className = "";
+                    aDiv[j].className = "";
+                }
+                aLi[idx].className = "active";
+                aDiv[idx].className = "selected";
+        }
+
+
         
+        var timer = setInterval(oNext.onclick,1000);
+        oContainer.onmouseover = function(){
+            clearInterval(timer);
+        }
+        oContainer.onmouseout = function(){
+            timer =  setInterval(oNext.onclick,1000);
+        }
 
 
 
-        
-        
 
-        
-        
+
     </script>
     
 </body>
