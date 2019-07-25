@@ -6,6 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <style>
+        ul{
+            background: #f00;
+        }
+        li{
+            background: #00ff00;
+        }
     
     
     
@@ -28,7 +34,7 @@
         var obtn = document.getElementById("btn");
         var oul = document.getElementById("uli");
         oul.onclick  = function(e){
-            if(e.target == "li"){
+            if(e.target.tagName == "LI"){
                 console.log(e.target.innerHTML);
             }
         }
@@ -39,9 +45,7 @@
             //在ul内部的后面加入元素
             oul.appendChild(oli);
 
-
         }
-    
     
     
     </script>
