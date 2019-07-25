@@ -30,11 +30,15 @@
         }
         #big-box{
             display: none;
+            position: relative;
         }
-    
-    
-    
-    
+        #big-img{
+            position: absolute;
+            left:0;
+            top:0;
+
+        }
+
     </style>
 </head>
 <body>
@@ -44,13 +48,17 @@
             <span id="drag"></span>
         </div>
         <div id="big-box">
-                <img src="images/2.jpg">
+                <img id="big-img" src="images/2.jpg">
         </div>
     </div>
     <script>
+        //  <!-- offset用来取值
+        //  syle 用来设置 -->
         var oSmallbox = document.getElementById("small-box");
         var oBigbox = document.getElementById("big-box");
         var oDrag = document.getElementById("drag");
+        var oBigImg = document.getElementById('big-img');
+
         oSmallbox.onmouseover = function(){
             oDrag.style.display= "block";
             oBigbox.style.display = "block";
@@ -62,10 +70,32 @@
         oSmallbox.onmousemove = function(e){
             oDrag.style.left = e.clientX - oDrag.offsetWidth/2 + "px";
             oDrag.style.top = e.clientY - oDrag.offsetHeight/2 + "px";
+
+            if(oDrag.offsetLeft <=0){
+                oDrag.style.left = 0;
+            }
+            var maxleft = oSmallbox.offsetWidth-oDrag.offsetWidth
+            if(oDrag.offsetLeft>maxleft){
+                oDrag.style.left = maxleft +"px";
+            }
+            if(oDrag.offsetTop<=0){
+                oDrag.style.top=0;
+            }
+            var maxheight = oSmallbox.offsetHeight-oDrag.offsetHeight
+            if(oDrag.offsetTop >= maxheight){
+                oDrag.style.top = maxheight + "px";
+            }
+            var smallDis = oSmallbox.offsetWidth - oDrag.offsetWidth;
+            var bigDis = oBigImg.offsetWidth - oBigbox.offsetWidth;
+            var smallDisY = oSmallbox.offsetHeight - oDrag.offsetHeight;
+            var bigDisY = oBigImg.offsetHeight - oBigbox.offsetHeight;
+
+            var xPro = oDrag.offsetLeft/smallDis;
+            oBigImg.style.left = -bigDis*xPro + "px";
+
+            oBigImg.style.top = -oDrag.offsetTop/smallDisY*bigDisY + "px";
+
         }
-        
-        
-        
         
         
     </script>
