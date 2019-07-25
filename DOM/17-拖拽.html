@@ -30,9 +30,26 @@
             var XDis = e.clientX - oDiv.offsetLeft;
             var YDis = e.clientY - oDiv.offsetTop;
             document.onmousemove = function(e){
+
                 //div随着鼠标动
                 oDiv.style.left = e.clientX - XDis +"px";
-                oDiv.style.top= e.clientY - YDis +"px";
+                oDiv.style.top = e.clientY - YDis +"px";
+
+                if(oDiv.offsetLeft <0){
+                    oDiv.style.left = 0;
+                }
+                if(oDiv.offsetTop<0){
+                    oDiv.style.top = 0;
+                }
+                var xMax =  document.documentElement.clientWidth - oDiv.offsetWidth;
+                if(oDiv.offsetLeft > xMax){
+                    oDiv.style.left = xMax  +"px";     
+                }
+                var YMax =  document.documentElement.clientHeight - oDiv.offsetHeight;
+                if(oDiv.offsetTop > YMax){
+                    oDiv.style.top = YMax  +"px";     
+                }
+
             }
             oDiv.onmouseup = function(){
                 document.onmousemove =null;

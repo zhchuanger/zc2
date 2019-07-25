@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 节点操作
+        createElement() 创建节点
+        父元素.appendchild() 插入节点在父元素内部的后边
+        父元素.removechild() 移除节点
+        父元素.replacechild(newnode,oldnode) 替换
+        父元素。insertBefore(newnode,refnode) 在前边插入
+        cloneNode(true);//true 深克隆 没有参数 只克隆当前元素
+    -->
+    <div id="div1">
+        <h2>hahhaha</h2>
+        <button id="btn">click</button>
+    </div>
+    <script>
+        var oBtn = document.getElementById("btn");
+        var oDiv = document.getElementById("div1");
+        var oH2 = document.getElementsByTagName("h2")[0];
+        oBtn.onclick = function(){
+            // var oSpan = document.createElement("span");
+            // oSpan.innerHTML = "zczczcz";
+            // oDiv.replaceChild(oSpan,oH2);
+            // oDiv.appendChild(oSpan);
+
+            // oDiv.removeChild(oH2);
+            var x= oH2.cloneNode(true);
+            oDiv.insertBefore(x,oH2);
+
+
+
+        }
+    
+    
+    
+    
+    
+    
+    
+    </script>
+    
+</body>
+</html>
