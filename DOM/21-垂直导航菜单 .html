@@ -49,14 +49,19 @@
     </ul>
     <script>
         var aH2 = document.getElementsByTagName("h2");
+    //true 为隐藏 false 为显示
         for(var i=0;i<aH2.length;i++){
+            aH2[i].flag = true;
             aH2[i].onclick = function(){
                 var oUl = next(this);
-                if(oUl.style.display == "none" ||oUl.style.display ==""){
+                if(this.flag){
                     oUl.style.display = "block";
-                }else{
+                }
+                else{
                     oUl.style.display = "none";
                 }
+                this.flag = !this.flag;
+                
             }
         }
         function next(elem){
