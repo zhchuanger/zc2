@@ -11,11 +11,46 @@
         1.元素选择器
         *   E   E#id    E.class
         2.关系选择符
-        E F     E>F     E+F(紧邻着兄弟)     E~F(所有兄弟)
-        3.属性选择符
-        4.伪类选择符
-        5.伪元素选择符
+        E F	包含选择符(Descendant combinator)	CSS1	选择所有被E元素包含的F元素。
+        E>F	子选择符(Child combinator)	CSS2	选择所有作为E元素的子元素F。
+        E+F	相邻选择符(Adjacent sibling combinator)	CSS2	选择紧贴在E元素之后F元素。
+        E~F	兄弟选择符(General sibling combinator)	CSS3	选择E元素所有兄弟元素F。
 
+
+        3.属性选择符
+        E[att]	CSS2	选择具有att属性的E元素。
+        E[att="val"]	CSS2	选择具有att属性且属性值等于val的E元素。
+        E[att~="val"]	CSS2	选择具有att属性且属性值为一用空格分隔的字词列表，其中一个等于val的E元素。
+        E[att^="val"]	CSS3	选择具有att属性且属性值为以val开头的字符串的E元素。
+        E[att$="val"]	CSS3	选择具有att属性且属性值为以val结尾的字符串的E元素。
+        E[att*="val"]	CSS3	选择具有att属性且属性值为包含val的字符串的E元素。
+        E[att|="val"]	CSS2	选择具有att属性且属性值为以val开头并用连接符"-"分隔的字符串的E元素，如果属性值仅为val，也将被选择。
+
+        4.伪类选择符
+        E:not(s)	CSS3	匹配不含有s选择符的元素E。
+        E:root	CSS3	匹配E元素在文档的根元素。
+        E:last-child	CSS3	匹配父元素的最后一个子元素E。
+        E:only-child	CSS3	匹配父元素仅有的一个子元素E。
+        E:nth-child(n)	CSS3	匹配父元素的第n个子元素E。
+        E:nth-last-child(n)	CSS3	匹配父元素的倒数第n个子元素E。
+        E:first-of-type	CSS3	匹配父元素下第一个类型为E的子元素。
+        E:last-of-type	CSS3	匹配父元素下的所有E子元素中的倒数第一个。
+        E:only-of-type	CSS3	匹配父元素的所有子元素中唯一的那个子元素E。
+        E:nth-of-type(n)	CSS3	匹配父元素的第n个子元素E。
+        E:nth-last-of-type(n)	CSS3	匹配父元素的倒数第n个子元素E。
+        E:empty	CSS3	匹配没有任何子元素（包括text节点）的元素E。
+        E:checked	CSS3	匹配用户界面上处于选中状态的元素E。(用于input type为radio与checkbox时)
+        E:enabled	CSS3	匹配用户界面上处于可用状态的元素E。
+        E:disabled	CSS3	匹配用户界面上处于禁用状态的元素E。
+        E:target	CSS3	匹配相关URL指向的E元素。
+
+        5.伪元素选择符
+        E:first-letter/E::first-letter	CSS1/3	设置对象内的第一个字符的样式。
+        E:first-line/E::first-line	CSS1/3	设置对象内的第一行的样式。
+        E:before/E::before	CSS2/3	设置在对象前（依据对象树的逻辑结构）发生的内容。用来和content属性一起使用
+        E:after/E::after	CSS2/3	设置在对象后（依据对象树的逻辑结构）发生的内容。用来和content属性一起使用
+        E::placeholder	CSS3	设置对象文字占位符的样式。
+        E::selection	CSS3	设置对象被选择时的颜色。
 
 
 
