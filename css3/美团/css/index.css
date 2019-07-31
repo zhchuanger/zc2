@@ -8,12 +8,17 @@ ul{
 }
 body{
     font-size:16px;
+    /* background-color: #f0efed; */
+}
+a{
+    text-decoration: none;
 }
 #header{
     width: 100%;
     height: 1.01rem;
     background: #06c1ae;
     display: flex;
+    position: relative;
 }
 .header-add{
     width: 1.67rem;
@@ -22,14 +27,35 @@ body{
     text-align: center;
     font-size: 0.32rem;
     color: #fff;
+    margin-left: -0.2rem;
 }
 .header-mine{
-    width: 0.98rem;
-    height:1.01rem;
-    line-height: 1.01rem;
-    text-align: center;
-    font-size: 0.32rem;
+    /* line-height: 1.01rem; */
+    /* text-align: center; */
+    font-size: 0.2rem;
     color: #fff;
+    margin-top: -0.02rem;
+}
+.icon-xialajiantou{
+    color: #fff;
+    font-size: 0.4rem;
+    position: absolute;
+    left: 1.1rem;
+    top: 0.3rem;
+
+    /* margin-left: 6.1rem; */
+    /* padding-right: 28.2rem; */
+}
+.icon-wode{
+    color: #fff;
+    font-size: 0.55rem;
+}
+.mine{
+    width: 0.94rem;
+    height: 1.01rem;
+    text-align: center;
+    margin-top: 0.1rem;
+    margin-right: 0.2rem;
 }
 .search-div{
     flex:1;  
@@ -59,7 +85,7 @@ body{
 .banner-download{
     width: 100%;
     height: 2.2rem;
-    background:pink;
+    /* background:pink; */
     position: relative;
 }
 .banner-download img{
@@ -78,19 +104,112 @@ body{
 .ul-box{
     width: 7.5rem;
     height: 3.3rem;
-    background: pink;
+    /* background: pink; */
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
+    border-bottom: 0.2rem solid  #f0efed;;
     
 }
 .ul-box li{
     width: 1.5rem;
     height: 1.62rem;
-    background: red;
-    
+    /* background: red; */
+    text-align: center;
 
+}
+.circle{
+    width: 0.8rem;
+    height: 0.8rem;
+    background: #fd9d21;
+    border-radius: 10rem;
+    display: block;
+    margin:0 auto;
+    margin-top:0.2rem;
+    overflow: hidden;
+    margin-bottom: 0.1rem;
+}
+.circle-word{
+    font-size: 0.24rem;
+    color:#666;
+    
+}
+.circle span{
+    color: #fff;
+    font-size: 0.5rem;
+    margin-top: 0.15rem;
+    display: block;
+    
+}
+.guessLike{
+    /* width: 100%; */
+    height: 63.1rem;
+    /* background: pink; */
 
-    
-    
+    border-bottom: 1px solid #DDD8CE;
+    margin-left: 0.2rem;
+}
+.guessLike p{
+    font-size: 0.34rem;
+    color: #333;
+    padding-top: 0.2rem 0.2rem;
+    padding-top: 0.2rem;
+    border-bottom: 0.01rem solid #DDD8CE;
+    padding-bottom: 0.2rem;
+}
+.food-pic img{
+    width: 1.8rem;
+    height: 1.64rem;
+}
+.guess-uli{
+    width: 100%;
+    height: 2.04rem;
+    /* background: greenyellow; */
+    display: table;
+    position: relative;
+    border-bottom: 1px solid #DDD8CE;
+}
+
+.food-pic{
+    vertical-align: middle;
+    display: table-cell;
+}
+.dealcard-brand{
+    font-size: 0.3rem;
+    font-weight: 400;
+    color: #333;
+    margin-bottom: 0.12rem;
+}
+.text-block{
+    font-size: 0.24rem;
+    color: #666;
+    padding-bottom: 0.35rem;
+}
+.dealcard-block-right{
+    width: 4rem;
+    height: 1.64rem;
+    margin-left: -0.5rem;
+    margin-top: 0.2rem;
+    padding-left: -0.5em;
+
+}
+.strong{
+    font-size: .38rem;
+    color: #06c1ae;
+}
+.strong-color{
+    font-size: .26rem;
+    color: #06c1ae;
+}
+.sp{
+    font-size: 0.24rem;
+    color:#666;
+}
+.sale{
+    font-size: 0.24rem;
+    color: #666;
+    position: absolute;
+    right: 0.2rem;
+    /* top: 0.02rem; */
+    bottom: 0.3rem;
 }
