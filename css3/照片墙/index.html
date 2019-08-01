@@ -27,6 +27,15 @@
             top:-135px;
             transition: all 2s ease;
         }
+        .box span {
+            position: absolute;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            background: url(img/1.jpg) 0 0 no-repeat;
+            opacity: 0;
+        }
     
     
     
@@ -66,13 +75,18 @@
 
         //等待所有图片加载完毕，再继续(保证能获取图片属性)
         function loadSuccess(){
+            var idx = 0;
             for(var i=0;i<4;i++){
                 for(var j=0;j<6;j++){
                     var oDiv = document.createElement("div");
                     oDiv.style.background = "url(img/thumbs/" + (i*6+j+1)+".jpg)";
                     oDiv.className="box";
-                    oDiv.row = i;
-                    oDiv.col = j;
+                    oDiv.row = i;//自定义行数
+                    oDiv.col = j;//自定义列数
+                    oDiv.index =idx;
+                    idx++;
+                    oDiv.innerHTML = "<span></span>"
+                    oDiv.onclick = fn;
                     oContainer.appendChild(oDiv);
                 }
 
@@ -93,8 +107,50 @@
 
             }
             
-            
-        }
+            //显示大图时
+            var bigDisX = (oContainer.offsetWidth-6*127)/2;
+            var bigDisY = (oContainer.offsetHeight-4*127)/2;
+            var flag = true;
+            function fn() {
+                if (flag) { //合并
+                    for (var i = 0; i < oBox.length; i++) {
+                        // 延迟时间设置为0
+                        oBox[i].style.transitionDelay = "0ms";
+                        // n*aBox.width + bigDisX;
+                        oBox[i].style.left = oBox[i].col * 127 + bigDisX + "px";
+                        oBox[i].style.top = oBox[i].row * 127 + bigDisY + "px";
+                        oBox[i].style.transform = "rotate(0deg)";
+                        oBox[i].style.borderWidth = "1px";
+
+                        var oSpan = oBox[i].getElementsByTagName('span')[0];
+                        oSpan.style.opacity = 1;
+                        // this.index+1的那张图   top  = -row * oBox.height
+                        var x = - oBox[i].col * 125;
+                        var y = -oBox[i].row * 125;
+                        // 0px 0px no-repeat
+                        oSpan.style.background = "url(img/" + (this.index + 1) + ".jpg) " + x + "px " + y + "px no-repeat";
+                    }
+                }else{ // 散开
+                    for(var i=0; i<oBox.length; i++){
+                        oBox[i].style.left = (oBox[i].col + 1) * disX + oBox[i].col * oBoxWidth + "px";
+                        var row = oBox[i].row;
+                        oBox[i].style.top = (row + 1) * disY + row * oBoxHeight + "px";
+                        oBox[i].style.transform = "rotate(" + (Math.random() * 40 - 20) + "deg)";
+                        var oSpan = oBox[i].getElementsByTagName('span')[0];
+                        oSpan.style.opacity = 0;
+                    }
+                }
+                flag = !flag;
+            }
+
+
+            }
+
+
+
+
+
+        
 
 
     
