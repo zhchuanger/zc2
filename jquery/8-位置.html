@@ -5,16 +5,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <style>
+        #div1{
+            width: 200px;
+            height: 200px;
+            background: red;
+            margin:100px auto;
+            position: relative;
+        }
+        #div2{
+            width: 100px;
+            height: 100px;
+            background: blue;
+            position: absolute;
+            left: 100px;
+            top: 100px;
+        }
+    
+    
+    
+    
+    </style>
 </head>
 <body>
-    <!-- 
+    <!-- 无参数
         position()  相对于最近已定位的祖先元素 取坐标
         offset()    相对于document 取坐标
         offsetParent() 取得最近已定位的祖先元素
-
-
-
     -->
+
+    <div id="div1">
+        <div class="aa"></div>
+        <div id="div2" class="aa"></div>
+    </div>
+    <script src="jquery-1.12.4.js"></script>
+    <script>
+        console.log( $('#div2').offset());
+        console.log( $('#div2').offsetParent());
+        console.log( $('#div2').position());
+        
+
+        
+    
+    
+    
+    </script>
     
 </body>
 </html>
