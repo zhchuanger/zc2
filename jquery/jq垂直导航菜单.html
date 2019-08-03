@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            list-style: none;
+        }
+        #container{
+            width: 180px;
+            border:1px solid #000;
+        }
+        #container ul{
+            display: none;
+        }
+        h2{
+            background: #000000;
+            color: #fff;
+            cursor: pointer;
+        }
+        #container .block{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <ul id="container">
+        <Li>
+            <h2>管理区</h2>
+            <ul>
+                <Li>111</Li>
+                <Li>222</Li>
+                <Li>333</Li>
+            </ul>
+        </Li>
+        <Li>
+            <h2>交流区</h2>
+            <ul>
+                <Li>111</Li>
+                <Li>222</Li>
+                <Li>333</Li>
+            </ul>
+        </Li>
+
+    </ul>
+    <script src="jquery-1.12.4.js"></script>
+    <script>
+        $('h2').on('click',function(){
+            $(this).siblings().toggleClass('block').css({
+                width: '180px',
+                border:'0px solid #000'
+            })
+            
+        })
+        
+
+
+
+        
+        
+        
+        
+        
+    </script>
+    
+</body>
+</html>
