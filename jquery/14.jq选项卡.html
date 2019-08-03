@@ -66,23 +66,13 @@
     </div>
     <script src="jquery-1.12.4.js"></script>
     <script>
+        
         $('#btns').children().on('click',function(){
             $(this).addClass('active').siblings().removeClass("active")
             var index = $(this).index();
             $(this).parent().siblings().children().eq(index).addClass("selected").siblings().removeClass("selected");     
 
         })
-
-        
-        
-
-
-
-        
-        
-        
-        
-        
         
     </script>
     
