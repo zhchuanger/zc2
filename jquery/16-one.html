@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #div1{
+            width: 200px;
+            height: 200px;
+            background: red;
+        }
+    
+    
+    
+    
+    
+    </style>
+</head>
+<body>
+    <div id="div1">aaa</div>
+    <input type="text">
+    <button>click</button>
+    <script src="jquery-1.12.4.js"></script>
+    <script>
+    
+    
+    $('input').on('focus',function(){
+        console.log('haha');
+        
+    })
+
+    $('button').on('click',function(){
+        // $('input').trigger('focus');
+        $('input').triggerHandler('focus');//浏览器的默认 focus 动作是不会被触发的(不会获取焦点)。
+
+    })
+
+    $('#div1').hover(function(){
+        //鼠标滑入
+        console.log(111);
+        $(this).css('background','green');
+        
+
+    },function(){
+        //鼠标划出
+        console.log(222);
+        $(this).css('background','red');
+        
+
+    })
+    
+    
+    
+    
+    
+    
+    </script>
+    
+</body>
+</html>
