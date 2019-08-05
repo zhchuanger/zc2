@@ -62,6 +62,21 @@
 #skin_3.selected { background-position:55px 15px; }
 #skin_4.selected { background-position:75px 15px; }
 #skin_5.selected { background-position:95px 15px; }
+.new_skin_0{
+    background: #b1b1b1;
+}
+.new_skin_1{
+    background: #b4d61e;
+}
+.new_skin_2{
+    background: #faab1a;
+}
+.new_skin_3{
+    background: #08bece;
+}
+.new_skin_4{
+    background: #e44c79;
+}
 /*导航样式开始*/
 .mainNav {
     position: absolute;

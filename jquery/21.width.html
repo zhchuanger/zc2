@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #div1{
+            width: 200px;
+            height: 200px;
+            background: palevioletred;
+            padding:20px;
+            margin:10px;
+        }
+    
+    
+    </style>
+</head>
+<body>
+    <div id="div1"></div>
+    <script src="jquery-1.12.4.js"></script>
+    <script>
+        console.log( $('#div1').width());//200
+        console.log( $('#div1').outerWidth());//240
+        console.log( $('#div1').outerWidth(true));//260
+
+    
+    
+    </script>
+    
+</body>
+</html>
