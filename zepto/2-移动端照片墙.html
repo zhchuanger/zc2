@@ -9,6 +9,7 @@
         *{
             margin: 0;
             padding: 0;
+            touch-action: none;
         }
         body{
             background: #000;
@@ -31,6 +32,7 @@
             height: 100%;
             left: 0;
             top: 0;
+            display: none;
             
         }
 
@@ -51,6 +53,33 @@
         for(var i=0;i<24;i++){
             $('<img src="img/thumbs/'+(i+1)+'.jpg">').appendTo('#container');
         }
+        var nowIndex = 0;
+        $('#container img').on('click',function(){
+            //显示大图
+            $('#big').show();
+            //显示 索引对应的大图
+            var index = $(this).index();
+            $('#big').css('background-image',"url(img/"+($(this).index()+1)+".jpg)");
+            nowIndex = $(this).index();
+        })
+        $('#big').on('click',function(){
+            $(this).hide();
+        }).on('swipeLeft',function(){
+            nowIndex++;
+            if(nowIndex == $('#container img').size()){
+                nowIndex =  0;
+            }
+            $('#big').css('background-image',"url(img/"+(nowIndex+1)+".jpg)");
+
+
+        }).on('swipeRight',function(){
+            nowIndex--;
+            if(nowIndex == -1){
+                nowIndex = $('#container img').length -1;
+            }
+            $('#big').css('background-image',"url(img/"+(nowIndex+1)+".jpg)");
+
+        })
         
 
     
