@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        字符串扩展
+        数值(number)扩展：isFinite
+                        isNaN
+                        isInteger
+                        parseFloat
+                        parseInt
+        Math扩展:trunc() 去除小数部分，返回整数部分
+                sign()   判断是正数、负数、还是0
+    -->
+    <script>
+        let a = 3;
+        let b = 4;
+        console.log(`${a}+${b}的结果是${a+b}`);
+
+        let str = "abcdefg";
+        console.log(str.includes("c"));
+
+        let str2 = "abcdef";
+        console.log(str2.startsWith('abc'));
+
+        console.log(str2.padStart(20,'xyz'));
+        console.log(str2.repeat(5));
+
+        console.log(Number.isFinite('abs'))
+        console.log(Math.sign(0));
+        
+        
+        
+
+
+        
+    
+    
+    
+    
+    
+    </script>
+    
+</body>
+</html>
