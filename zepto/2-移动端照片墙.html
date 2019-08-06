@@ -59,7 +59,7 @@
             $('#big').show();
             //显示 索引对应的大图
             var index = $(this).index();
-            $('#big').css('background-image',"url(img/"+($(this).index()+1)+".jpg)");
+            $('#big').css('background-image',"url(img/"+(index+1)+".jpg)");
             nowIndex = $(this).index();
         })
         $('#big').on('click',function(){
