@@ -60,13 +60,19 @@
         // obj.say();
 
         //2.箭头函数中不能使用arguments 可以使用...rest
-        let fn = (...rest)=>{
-            console.log(rest);
+        // let fn = (...rest)=>{
+        //     console.log(rest);
             
-        }
-        fn(1,2,3,4);
+        // }
+        // fn(1,2,3,4);
     
         //3.箭头函数不能使用new
+        let fn = (...rest) => { //fn is not a constructor
+            console.log(rest);
+        }
+
+        var f1 = new fn();
+        fn(1, 2, 3, 4);
     
     
     

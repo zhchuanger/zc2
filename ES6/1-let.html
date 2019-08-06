@@ -37,11 +37,12 @@
         //     var n = 100;
         // }
         // console.log(n);
-        // var m = 5;
-        // if(m){
-        //     let n = 100;//块级作用域只在花括号内起作用
-        // }
-        // console.log(n);
+
+        var m = 5;
+        if(m){
+            let n = 100;//块级作用域只在花括号内起作用
+        }
+        console.log(n);
 
         //函数中x会在当前作用域 变量提升 ，值为undefined 
         // var x = 10;
@@ -51,13 +52,13 @@
         // }
         // a();
 
-        var x= 10;
-        function a(){
-            console.log(x);
-            let x = 20;//因为暂时性死区，外边的x进不来；因为let没有变量提升，就会报错；
+        // var x= 10;
+        // function a(){
+        //     console.log(x);
+        //     let x = 20;//因为暂时性死区，外边的x进不来；因为let没有变量提升，就会报错；
             
-        }
-        a();
+        // }
+        // a();
 
         
         
