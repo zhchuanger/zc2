@@ -50,6 +50,31 @@
             return obj.age == 18;
         })
         console.log(arr5);
+
+        var arr6 = [1,2,3,4,5];
+        var arr7 = arr6.map(function(val,index){
+            return val*2;
+        })
+        console.log(arr7);
+
+        arr6.forEach(function(val,index){
+            console.log(val,index);
+        })
+
+        var arr8 = ['a','b','c','d','e'];
+        for(val of arr8){//循环数组的元素
+            console.log(val);
+        }
+
+        for(index of arr8.keys()){//循环数组的索引
+            console.log(index);
+        }
+
+        for([index,val] of arr8.entries()){//循环索引和数组中的元素
+            console.log(index,val);
+            
+        }
+        
         
         
         
