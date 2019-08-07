@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 数组去重 -->
+    <script>
+        //1
+        // function fn(arr){
+        //     return [...new Set(arr)]
+        // }
+        //2
+        // function fn(arr){
+        //     let result = [];
+        //     arr.forEach(function(val,index) {
+        //         if(!result.includes(val)){
+        //             result.push(val);
+        //         } 
+        //     });
+        //     return result;
+        // }
+        // console.log(fn([1,2,3,5,4,3,6,7,2]));
+        //3键值对
+        function fn(arr){
+            var obj = {
+            }
+            var result = [];
+            arr.forEach(function(val){
+                if(obj[val]){
+                    obj[val] +=1;
+                }else{
+                    obj[val] = 1;
+                    result.push(val);
+                }
+            });
+            console.log(obj);
+            return result;
+            
+        }
+
+        console.log( fn([1,2,3,4,5,7,3,4,2,1]) ); 
+    
+    
+    
+    
+    
+    
+    
+    </script>
+    
+</body>
+</html>
