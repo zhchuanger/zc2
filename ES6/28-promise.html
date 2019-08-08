@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 第一个请求完成 通过请求回来的data 发送第二个请求
+        //返回电影id 取到电影id接着请求
+        //回调地狱
+        // var id;
+        // $.get("ul1",function(data){
+        //     id = data.id;
+        //     $.get("ul2?id="+id,function(){
+
+        //     })
+
+        // }
+
+        //管理异步请求 将异步请求以 同步的方式表现出来
+
+        new Promise(function(resolve,reject){
+            $.get('ul1',function(data){
+                if(data){
+                    resolve(data.id)
+                }else{
+                    reject();
+                }
+            });
+        }).then(function(){
+            $.get('ul2',function(){
+
+            })
+        }).catch(function(){
+            console.log("shibai");
+            
+        })
+        
+        
+        
+        
+        
+        
+    </script>
+    
+</body>
+</html>
