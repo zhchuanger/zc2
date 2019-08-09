@@ -20,7 +20,7 @@
         // console.log(arr1);
 
         var arr3 = [1,2,3,4,5];
-        //找到第一个符合条件的成员
+        //找到第一个符合条件的成员 find
         var x = arr3.find(function(val,key,arr){
             // console.log(val,key,arr);
             return val > 1;
@@ -45,12 +45,13 @@
         })
         console.log(obj1);
 
-        //找到所有符合条件的成员
+        //找到所有符合条件的成员filter
         var arr5 = arr4.filter(function(obj){
             return obj.age == 18;
         })
         console.log(arr5);
 
+        //map映射出一个新数组
         var arr6 = [1,2,3,4,5];
         var arr7 = arr6.map(function(val,index){
             return val*2;
@@ -62,15 +63,16 @@
         })
 
         var arr8 = ['a','b','c','d','e'];
-        for(val of arr8){//循环数组的元素
+        //循环数组的元素
+        for(val of arr8){
             console.log(val);
         }
-
-        for(index of arr8.keys()){//循环数组的索引
+        //循环数组的索引
+        for(index of arr8.keys()){
             console.log(index);
         }
-
-        for([index,val] of arr8.entries()){//循环索引和数组中的元素
+        //循环索引和数组中的元素
+        for([index,val] of arr8.entries()){
             console.log(index,val);
             
         }
