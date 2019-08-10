@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .red{
+            color:red;
+        }
+    
+    
+    
+    </style>
+</head>
+<body>
+    <div id="app">
+        <input type="text" v-model="name">
+        <button @click="add()">add</button>
+        <ul>
+            <Li v-for="(obj,index) in List" @click="change(obj)" :class="{red:obj.isRed}">{{obj.name}}<button @click.stop="del()">del</button></Li>
+        </ul>
+
+        <!-- splice(index,howmany,item1,.....,itemX) 返回被删除的项目。 --> 
+    </div>
+    <script src="vue.js"></script>
+    <script>
+        new Vue({
+            el:"#app",
+            data:{
+                List:[
+                    {
+                        name:"aaa",
+                        isRed:false
+                    },
+                    {
+                        name:"bbb",
+                        isRed:false
+
+                    }
+                ],
+                name:"",
+                
+
+                
+            },
+            methods: {
+                add(){
+                    this.List.push({name:this.name,isRed:false});
+                    this.name="";
+
+                },
+                change(obj){
+                    obj.isRed = !obj.isRed;
+
+                },
+                del(index){
+                    this.List.splice(index,1);
+
+                }
+            },
+        })
+    
+    
+    
+    
+    
+    </script>
+    
+</body>
+</html>
