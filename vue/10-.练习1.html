@@ -16,10 +16,12 @@
 </head>
 <body>
     <div id="app">
-        <input type="text" v-model="name">
+        <input type="text" v-model="name" @keyup="filterfn()">
         <button @click="add()">add</button>
         <ul>
-            <Li v-for="(obj,index) in List" @click="change(obj)" :class="{red:obj.isRed}">{{obj.name}}<button @click.stop="del()">del</button></Li>
+            <Li v-for="(obj,index) in List" @click="change(obj)" :class="{red:obj.isRed}"  v-show="obj.isShow">{{obj.name}}
+                <button @click.stop="del()">del</button>
+            </Li>
         </ul>
 
         <!-- splice(index,howmany,item1,.....,itemX) 返回被删除的项目。 --> 
@@ -32,11 +34,14 @@
                 List:[
                     {
                         name:"aaa",
-                        isRed:false
+                        isRed:false,
+                        isShow:true
+                        
                     },
                     {
                         name:"bbb",
-                        isRed:false
+                        isRed:false,
+                        isShow:true
 
                     }
                 ],
@@ -47,8 +52,9 @@
             },
             methods: {
                 add(){
-                    this.List.push({name:this.name,isRed:false});
+                    this.List.push({name:this.name,isRed:false,isShow:true});
                     this.name="";
+                    // this.filterfn();
 
                 },
                 change(obj){
@@ -58,6 +64,17 @@
                 del(index){
                     this.List.splice(index,1);
 
+                },
+                filterfn(){
+                    let value = this.name;
+                    this.List.forEach(function(obj,index){
+                        if(obj.name.includes(value)){
+                            obj.isShow = true; 
+                        }
+                        else{
+                            obj.isShow = false;
+                        }
+                    })
                 }
             },
         })
