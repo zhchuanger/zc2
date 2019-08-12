@@ -20,7 +20,7 @@
         <button @click="add()">add</button>
         <ul>
             <Li v-for="(obj,index) in List" @click="change(obj)" :class="{red:obj.isRed}"  v-show="obj.isShow">{{obj.name}}
-                <button @click.stop="del()">del</button>
+                <button @click.stop="del(index)">del</button>
             </Li>
         </ul>
 
