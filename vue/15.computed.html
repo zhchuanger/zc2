@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <h2>{{firstname}}</h2>
+        <h2>{{lastname}}</h2>
+        <h2>{{fullname}}</h2>
+
+    </div>
+    <script src="vue.js"></script>
+    <script>
+        let vm = new Vue({
+            el: "#app",
+            data: {
+                firstname: 'zhao',
+                lastname: 'chuang'
+            },
+            //计算属性
+            computed: {
+                fullname() {
+                    return this.firstname + this.lastname;
+                }
+            },
+            watch: {
+                //一次只能检测一个值，这个值是在data中事先就存在的
+                firstname:function(newVlue,oldVlue){
+                    console.log("haha",newVlue,oldVlue);
+                }
+            },
+        })
+
+
+
+    </script>
+
+</body>
+
+</html>
