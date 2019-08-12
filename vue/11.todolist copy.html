@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #app {
+            width: 400px;
+            margin: 0 auto;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        li {
+            height: 50px;
+            line-height: 50px;
+            background: #ccc;
+            margin-bottom: 10px;
+            padding: 0 10px;
+        }
+
+        .right {
+            float: right;
+        }
+
+        .pink {
+            background: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <h2>todolist</h2>
+        <hr>
+        <div>
+            <label for="proName">名称</label>
+            <input type="text" id="proName" placeholder="请输入商品名称" v-model="proname">
+            <label for="proPrice">价格</label>
+            <input type="text" id="proPrice" placeholder="请输入商品价格" v-model="proprice">
+            <button @click="add()">添加</button>
+        </div>
+        <div>
+            <input type="text" placeholder="请输入搜索内容" v-model="searchvalue">
+            <button @click="search()"> 搜索</button>
+        </div>
+        <ul>
+            <li v-for="obj in prolist" :class="{pink:obj.ischecked}" @click="change(obj)" v-show="obj.isshow">
+                <input type="checkbox" v-model="obj.ischecked">
+                <span>{{obj.name}}</span>
+                <div class="right">
+                    <span class="price">{{obj.price}}</span>
+                    <span class="close" @click.stop="del(index)">[X]</span>
+                </div>
+            </li>
+        </ul>
+        <div>
+            <button @click="delall()">删除选中</button>
+            <span>总价 {{total()}}</span>
+        </div>
+
+    </div>
+    <script src="vue.js"></script>
+    <script>
+        let vm = new Vue({
+            el: '#app',
+            data: {
+                prolist: [
+                    {
+                        name: "苹果",
+                        price: 100,
+                        ischecked: false,
+                        isshow:true
+                    },
+                    {
+                        name: "桃子",
+                        price: 150,
+                        ischecked: false,
+                        isshow:true
+                        
+                    }
+                ],
+                proname: '',
+                proprice: '',
+                searchvalue:''
+
+
+
+            },
+            methods: {
+                add() {
+                    if (this.proname && this.proprice) {//添加商品信息为有效值时，才可以添加
+                        this.prolist.push({ name: this.proname, price: this.proprice * 1, ischecked: false,isshow:true });
+                        this.proname = "";
+                        this.proprice = "";
+                    }
+
+                },
+                change(obj) {
+                    obj.ischecked = !obj.ischecked;
+                },
+                total() {
+                    let sum = 0;
+                    this.prolist.forEach(function (obj, index) {
+                        if (obj.ischecked) {
+                            sum += obj.price;
+                        }
+
+                    })
+                    return sum;
+                },
+                del(index){
+                    this.prolist.splice(index,1);
+                },
+                delall(){
+                    let arr = this.prolist.filter(function(obj,index){
+                        //过滤 返回没有勾选的数组
+                        return !obj.ischecked;
+                    })
+                    this.prolist = [...arr];
+                },
+                search(){
+                    let value = this.searchvalue;
+                    this.prolist.forEach(function(obj,index){
+                        if(obj.name.includes( value )){
+                            obj.isshow = true;
+                        }else{
+                            obj.isshow = false;
+                        }
+                    })
+
+                }
+
+            },
+
+
+        })
+
+
+    </script>
+
+</body>
+
+</html>
