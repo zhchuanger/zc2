@@ -8,7 +8,10 @@
 </head>
 <body>
     <div id="app">
-        <!-- v-model在data中存的值，对应的是value -->
+        <!-- v-model在data中存的值，对应的是value 
+            复选框是数组
+            单选框和下拉框都是字符串
+        -->
         <input type="text" v-model="msg">
         <h2>{{msg}}</h2>
         <h3>爱好：</h3>
