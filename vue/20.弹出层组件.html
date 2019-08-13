@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .log-title {
+            width: 300px;
+            height: 20px;
+            border: 1px seagreen solid;
+        }
+
+        .wrong {
+            float: right;
+        }
+
+        .content {
+            width: 300px;
+            height: 300px;
+            border: 1px seagreen solid;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <button @click="loginshow = true">登录</button>
+        <button @click="regshow = true">注册</button>
+        <my-dialog title="登录" v-show="loginshow">
+            <label for="name">用户名：</label>
+            <input type="text" id="name">
+            <br>
+            <label for="word">密码：</label>
+            <input type="password" id="word">
+            <br>
+            <button>登录</button>
+        </my-dialog>
+        <my-dialog title="注册" v-show="regshow" @close="fn">
+            <label for="name">用户名：</label>
+            <input type="text" id="name">
+            <br>
+            <label for="word">密码：</label>
+            <input type="password" id="word">
+            <br>
+            <button>注册</button>
+
+        </my-dialog>
+
+    </div>
+    <!-- 只有一个根元素 -->
+    <template id="temp">
+        <div  v-show="isshow">
+            <div class="log-title">
+                <span>{{title}}</span>
+                <span class="wrong" @click="$emit('close','reg')" >[x]</span>
+            </div>
+            <div class="content">
+                <slot></slot>
+            </div>
+        </div>
+    </template>
+    <script src="vue.js"></script>
+    <script>
+        new Vue({
+            el: "#app",
+            data:{
+                loginshow:false,
+                regshow:false
+
+            },
+            fn(msg){
+                if(masg == 'reg'){
+                    
+                }
+                
+
+            },
+            components: {
+                "myDialog": {
+                    template: "#temp",
+                    props: ["title"],
+                    data() {
+                        return {
+                            isshow:true
+                        }
+                    },
+                    methods: {
+                        dialogclose(){
+                            this.isshow = false
+                        }
+                    },
+                }
+            }
+        })
+
+
+
+
+    </script>
+
+</body>
+
+</html>
