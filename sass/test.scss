@@ -4,4 +4,22 @@ body{
     background: $color;
     width: $width;
     color:$color;
+    #app{
+        color:pink
+        h2{
+            width:200px
+
+        }
+        p{
+            height: 300px;
+            padding:{
+                top:20px;
+                bottom:20px;
+            }
+            &:hover{
+                color: blue;
+                background: pink
+            }
+        }
+    }
 }

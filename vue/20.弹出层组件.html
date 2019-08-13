@@ -29,7 +29,7 @@
     <div id="app">
         <button @click="loginshow = true">登录</button>
         <button @click="regshow = true">注册</button>
-        <my-dialog title="登录" v-show="loginshow">
+        <my-dialog title="登录" v-show="loginshow"  @close="fn">
             <label for="name">用户名：</label>
             <input type="text" id="name">
             <br>
@@ -52,10 +52,10 @@
     </div>
     <!-- 只有一个根元素 -->
     <template id="temp">
-        <div  v-show="isshow">
+        <div v-show="isshow">
             <div class="log-title">
                 <span>{{title}}</span>
-                <span class="wrong" @click="$emit('close','reg')" >[x]</span>
+                <span class="wrong" @click="$emit('close','reg')">[x]</span>
             </div>
             <div class="content">
                 <slot></slot>
@@ -66,17 +66,18 @@
     <script>
         new Vue({
             el: "#app",
-            data:{
-                loginshow:false,
-                regshow:false
+            data: {
+                loginshow: false,
+                regshow: false
 
             },
-            fn(msg){
-                if(masg == 'reg'){
-                    
+            methods: {
+                fn(msg) {
+                    if (msg == 'reg') {
+                        this.regshow = false;
+                        this.loginshow = false;
+                    }
                 }
-                
-
             },
             components: {
                 "myDialog": {
@@ -84,11 +85,11 @@
                     props: ["title"],
                     data() {
                         return {
-                            isshow:true
+                            isshow: true
                         }
                     },
                     methods: {
-                        dialogclose(){
+                        dialogclose() {
                             this.isshow = false
                         }
                     },
