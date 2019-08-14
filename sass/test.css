@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   margin: 0;
   padding: 0; }
@@ -23,13 +24,39 @@ body {
       body #app p:hover {
         color: blue;
         background: pink; }
+    body #app h5 {
+      /*注释*/ }
     body #app div {
       width: 0;
       height: 0;
       border: 10px solid transparent;
-      border-top-color: green;
+      border-bottom-color: green;
       width: 800px;
       height: 100px;
       height: 100px; }
+    body #app .item-1 {
+      width: 20px; }
+    body #app .item-2 {
+      width: 40px; }
+    body #app .item-3 {
+      width: 60px; }
+    body #app .item-4 {
+      width: 80px; }
+    body #app .xx-5 {
+      width: 250px; }
+    body #app .xx-6 {
+      width: 300px; }
+    body #app .xx-7 {
+      width: 350px; }
+    body #app .xx-8 {
+      width: 400px; }
+    body #app .xx-9 {
+      width: 450px; }
+    body #app .success {
+      background: url(success.jpg); }
+    body #app .error {
+      background: url(error.jpg); }
+    body #app .warn {
+      background: url(warn.jpg); }
 
 /*# sourceMappingURL=test.css.map */

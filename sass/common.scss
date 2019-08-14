@@ -5,11 +5,14 @@
 ul{
     list-style: none;
 }
-@mixin arrow($size:5px,$col:#000) {
+@mixin arrow($size:5px,$col:#000,$dir:top) {
     width:0;
     height:0;
     border:$size solid transparent;
-    border-top-color: $col;
+    @if($dir == 'top'){
+        border-bottom-color: $col;
+    }
+    
 }
 @mixin a($w,$h,$c:green) {
     width: $w;

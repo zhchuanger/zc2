@@ -26,6 +26,7 @@ body{
         }
         h5{
             //继承属性
+            /*注释*/
             @extend h2;
         }
         div{
@@ -33,6 +34,33 @@ body{
             width:add(500px,300px);
             height: (300px/3);
             height: 300px-200px;
+        }
+        $i:10;
+        @if($i<0){
+            .aa{
+                width: 200px;
+                background: black;
+            }
+        }
+        @for $j from 1 to 5{
+            .item-#{$j}{
+                width: 20px*$j;
+            }
+        }
+
+        $m:5;
+        @while($m<10){
+            .xx-#{$m}{
+                width:$m*50px;
+            }
+            $m:$m+1;
+        }
+
+        $list:success error warn;
+        @each $n in $list{
+            .#{$n}{
+                background:url(#{$n}.jpg);
+            }
         }
     }
 }
