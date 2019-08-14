@@ -2,15 +2,24 @@ body {
   background: red;
   width: 100px;
   color: red; }
-  body #app color:pink
-  h2 {
-    width: 200px; }
-  body #app p {
-    height: 300px;
-    padding-top: 20px;
-    padding-bottom: 20px; }
-    body #app p:hover {
-      color: blue;
-      background: pink; }
+  body #app {
+    color: pink; }
+    body #app h2, body #app h5 {
+      width: 200px;
+      width: 300px;
+      height: 200px;
+      border: 1px solid green; }
+    body #app p {
+      height: 300px;
+      padding-top: 20px;
+      padding-bottom: 20px; }
+      body #app p:hover {
+        color: blue;
+        background: pink; }
+    body #app div {
+      width: 0;
+      height: 0;
+      border: 10px solid transparent;
+      border-top-color: green; }
 
 /*# sourceMappingURL=test.css.map */

@@ -1,13 +1,27 @@
+@charset "utf-8";
 $color:red;
 $width:100px;
+@mixin a($w,$h,$c:green) {
+    width:$w;
+    height: $h;
+    border:1px solid $c;
+}
+
+@mixin arrow($size,$c){
+    width: 0;
+    height: 0;
+    border:$size solid transparent;
+    border-top-color: $c;
+}
 body{
     background: $color;
     width: $width;
     color:$color;
     #app{
-        color:pink
+        color:pink;
         h2{
-            width:200px
+            width:200px;
+            @include a(300px,200px);
 
         }
         p{
@@ -20,6 +34,13 @@ body{
                 color: blue;
                 background: pink
             }
+        }
+        h5{
+            //继承属性
+            @extend h2;
+        }
+        div{
+            @include arrow(10px,green);
         }
     }
 }
