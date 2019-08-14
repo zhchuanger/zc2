@@ -1,3 +1,10 @@
+* {
+  margin: 0;
+  padding: 0; }
+
+ul {
+  list-style: none; }
+
 body {
   background: red;
   width: 100px;
@@ -20,6 +27,9 @@ body {
       width: 0;
       height: 0;
       border: 10px solid transparent;
-      border-top-color: green; }
+      border-top-color: green;
+      width: 800px;
+      height: 100px;
+      height: 100px; }
 
 /*# sourceMappingURL=test.css.map */

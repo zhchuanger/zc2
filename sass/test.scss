@@ -1,18 +1,7 @@
 @charset "utf-8";
+@import 'common';
 $color:red;
 $width:100px;
-@mixin a($w,$h,$c:green) {
-    width:$w;
-    height: $h;
-    border:1px solid $c;
-}
-
-@mixin arrow($size,$c){
-    width: 0;
-    height: 0;
-    border:$size solid transparent;
-    border-top-color: $c;
-}
 body{
     background: $color;
     width: $width;
@@ -41,6 +30,9 @@ body{
         }
         div{
             @include arrow(10px,green);
+            width:add(500px,300px);
+            height: (300px/3);
+            height: 300px-200px;
         }
     }
 }
