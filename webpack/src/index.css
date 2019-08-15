@@ -1,3 +1,24 @@
 h2{
     background: aqua;
+    background: url(images/1.jpg) 0 0 no-repeat;
+    width: 500px;
+    height: 500px;
+    transform: rotate(30deg);
+}
+@keyframes run{
+    0%{
+        width:100px;
+    }
+    50%{
+        width:800px;
+    }
+    100%{
+        width:300px;
+    }
+}
+.a{
+
+}
+.b{
+    
 }
