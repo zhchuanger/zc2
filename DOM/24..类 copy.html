@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 创建类 属性写在构造函数中 方法写在原型下
+        // 类中this指向new出来的实例化对象
+        function Person(name, age, weight) {
+            this.name = name;
+            this.age = age;
+            this.weight = weight;
+
+        }
+        // 构造函数下有一个prototype属性 指向原型对象
+        // 写在原型对象下的属性和方法能被所有实例化对象所共享
+        Person.prototype.eat = function () {
+            console.log("chchch");
+
+        }
+        //实例化对象
+        var p1 = new Person('zs', 20, 120);
+        console.log(p1.name);
+        p1.eat();
+
+
+
+
+    </script>
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>
