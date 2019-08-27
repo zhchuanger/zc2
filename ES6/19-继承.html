@@ -17,8 +17,7 @@
         //构造函数中有一个prototype属性，指向原型对象
         //添加在原型对象下的属性和方法可以被实例化对象所共享
         Person.prototype.say = function(){
-            console.log('我是'+this.name);
-            
+            console.log('我是'+this.name);  
         }
         //实例化对象
         var p1 = new Person('zs',20);
