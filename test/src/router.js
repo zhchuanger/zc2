@@ -9,7 +9,7 @@ import Error from './views/Error.vue';
 
 Vue.use(Router);
 
-export default new Router({
+const router = new Router({
   mode: 'history',
   base: process.env.BASE_URL,
   routes: [
@@ -17,6 +17,15 @@ export default new Router({
       path: '/',
       name: 'home',
       component: Home,
+      alias:'/c',
+      beforeEnter: (to, from, next) => {
+        console.log('首页',to);
+        console.log('首页',from);
+        console.log('首页',next);
+        next();
+        
+        
+      }
     },
     {
       path: '/about',
@@ -48,10 +57,28 @@ export default new Router({
       path:'/test/:id/:name',
       name:'test',
       component:Test,
-    },{
+    },
+    {
+      path:'/aaa',
+      redirect:'/'
+    },
+    {
       path:'*',
       name:'error',
       component:Error,
     }
   ],
 });
+// 全局前置守卫
+// router.beforeEach((to,from,next)=>{
+//     console.log(to);
+//     console.log(from);
+//     console.log(next);
+//     next();
+
+  
+  
+  
+// })
+
+export default router;
