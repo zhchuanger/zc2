@@ -1,11 +1,27 @@
 <template>
+<!-- 总组件 -->
   <div id="app">
-    这是App.vue
+    <!-- 这是App.vue
     <common-header></common-header>
     <div class="container">
       zhaochuang
     </div>
-    <common-footer></common-footer>
+    <common-footer></common-footer> -->
+    <router-view/>
+    <div id="nav">
+      
+      
+
+
+
+
+    </div>
+      
+
+
+
+
+
   </div>
 </template>
 
