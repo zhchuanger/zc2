@@ -1,5 +1,7 @@
 <template>
     <div>
+        {{$route.params.id}}
+        {{$route.params.name}}
         <h2>test页面</h2>
 
     </div>
