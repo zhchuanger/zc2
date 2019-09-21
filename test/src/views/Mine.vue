@@ -1,7 +1,11 @@
 <template>
     <div>
 
-        <h2>minemine</h2>
+        <h2>我的页面</h2>
+        <router-view/>
+        <router-link to="/mine/test1">子路由1</router-link>
+        <router-link to="/mine/test2">子路由2</router-link>
+
 
     </div>
 </template>

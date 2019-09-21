@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h2>test页面</h2>
+        <h2>子路由1~~</h2>
 
     </div>
 </template>

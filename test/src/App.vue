@@ -9,24 +9,13 @@
     <common-footer></common-footer> -->
     <router-view/>
     <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>|
-    <router-link to="/mine">Mine</router-link>|
-    <router-link to="/test">Test</router-link>
+      <router-link to="/">Home</router-link> |
+      <router-link to="/about">About</router-link>|
+      <router-link to="/mine">Mine</router-link>|
+      <router-link to="/test">Test</router-link>
     
-
-      
-
-
-
-
     </div>
       
-
-
-
-
-
   </div>
 </template>
 
