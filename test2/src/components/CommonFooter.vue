@@ -1,15 +1,60 @@
 <template>
-    <div class="footer">
-        <router-link to="/">电影</router-link>
-        <router-link to="/music">音乐</router-link>
-        <router-link to="/book">图书</router-link>
-        <router-link to="/photo">图片</router-link>
+    <div class="footer" :style="{background:$store.state.color}">
+        <!-- <router-link @click.native="$store.commit('change',{title:'电影',color:'red'})" to="/">电影</router-link> -->
+        <router-link v-for="(obj,index) in menu" :key="index" @click.native="change({title:obj.title,color:obj.color})" :to="obj.path">{{obj.title}}</router-link>
+
 
     </div>
 </template>
 
 <script>
+
+    import {mapMutations} from 'vuex';
     export default {
+            data() {
+                return {
+                    menu:[
+                        {
+                            title:'电影',
+                            path:'/',
+                            color:'#ff5722'
+                        
+                        },
+                        {
+                            title:'音乐',
+                            path:'/music',
+                            color:'orange'
+                        
+                        },
+                        {
+                            title:'图书',
+                            path:'/book',
+                            color:'yellowgreen'
+                        
+                        },
+                        {
+                            title:'图片',
+                            path:'/photo',
+                            color:'#00bcd4'
+                        
+                        },
+                        
+
+                    ]
+                }
+        },
+            methods:mapMutations(['change']),
+            created() {
+                this.menu.forEach((obj,index)=>{
+                    if(obj.path == this.$route.path){
+                        this.change({title:obj.title,color:obj.color})
+
+                    }
+
+
+                })
+            },
+
         
     }
 </script>
