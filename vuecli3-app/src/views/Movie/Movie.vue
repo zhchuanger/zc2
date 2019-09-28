@@ -69,9 +69,11 @@
 
             },
             goDetail(id){
-                // this.$router.push('/moviedetail/' + id);
+                //query
                 this.$router.push({path:'/moviedetail',query:{id}});
                 // this.$router.push('/moviedetail/' + id);
+                //params
+                // this.$router.push({name:'moviedetail',params:{id}});
 
 
             }
