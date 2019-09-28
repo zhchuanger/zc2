@@ -69,7 +69,9 @@
 
             },
             goDetail(id){
-                this.$router.push('/moviedetail/' + id);
+                // this.$router.push('/moviedetail/' + id);
+                this.$router.push({path:'/moviedetail',query:{id}});
+                // this.$router.push('/moviedetail/' + id);
 
 
             }

@@ -18,6 +18,11 @@ export default new Router({
       component: Movie,
     },
     {
+      path:'/moviedetail',
+      name:'moviedetail',
+      component:MovieDetail
+    },
+    {
       path:'/music',
       name:'music',
       component:Music
@@ -33,11 +38,7 @@ export default new Router({
       name:'book',
       component:Book
     },
-    {
-      path:'/moviedetail/:id',
-      name:'moviedetail',
-      component:MovieDetail
-    }
+    
     
   ]
 })
