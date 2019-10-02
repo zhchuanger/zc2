@@ -1,7 +1,7 @@
 <template>
     <div>
         <ul class="movieul">
-            <li v-for="(obj,index) in movieList" :key="index" class="movieli">
+            <li v-for="(obj,index) in movieList" :key="index" class="movieli" @click="goDetail(obj.id)">
                 <img :src="obj.images.medium" alt="">
                 <div>
                     <h2>{{obj.original_title}}</h2>
@@ -64,6 +64,10 @@
 
                     }
                     
+            },
+            goDetail(id){
+                this.$router.push({path:'/movieDetail',query:{id}})
+
             }
         },
         

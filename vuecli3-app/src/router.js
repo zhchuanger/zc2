@@ -20,7 +20,7 @@ export default new Router({
     {
       path:'/moviedetail',
       name:'moviedetail',
-      component:MovieDetail
+      component: MovieDetail
     },
     {
       path:'/music',
