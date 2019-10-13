@@ -15,15 +15,16 @@
         data() {
             return {
                 nowIndex:0,
-                imgList:[
-                    '/img/photo/1.jpg',
-                    '/img/photo/2.jpg',
-                    '/img/photo/3.jpg'
+                // imgList:[
+                //     '/img/photo/1.jpg',
+                //     '/img/photo/2.jpg',
+                //     '/img/photo/3.jpg'
 
-                ]
+                // ]
                 
             }
         },
+        props:['imgList','mode','speed'],
         created() {
             setInterval(() => {
                 this.nowIndex++;
@@ -31,7 +32,7 @@
                     this.nowIndex = 0;
                 }
                 
-            }, 1000);
+            },this.speed);
             
         },
         
@@ -56,32 +57,57 @@ li{
     }
 
 }
-.fade-enter{
+.slide-enter{
     transform: translateX(-100%);
 
 }
-.fade-enter-active{
+.slide-enter-active{
     transition: transform 1s linear;
 
 
 }
-.fade-enter-to{
+.slide-enter-to{
     transform: translateX(0);
 
 }
-.fade-leave{
+.slide-leave{
     transform: translateX(0);
 
 }
-.fade-leave-active{
+.slide-leave-active{
     transition: transform 1s linear;
 
 
 }
-.fade-leave-to{
+.slide-leave-to{
     transform: translateX(100%);
 
 }
+.fade-enter{
+    opacity: 0;
+
+}
+.fade-enter-active{
+    transition: opacity 1s linear;
+
+}
+.fade-active-to{
+    opacity: 1;
+
+}
+.fade-leave{
+    opacity: 1;
+
+}
+.fade-leave-active{
+    transition: opacity 1s linear;
+
+}
+.fade-leave-to{
+    opacity: 0;
+
+}
+
 
 
 

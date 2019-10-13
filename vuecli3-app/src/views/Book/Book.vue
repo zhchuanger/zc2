@@ -1,6 +1,6 @@
 <template>
     <div>
-        <my-swipe></my-swipe>
+        <my-swipe :imgList="imgList" mode="fade" speed="1000"></my-swipe>
     
     </div>
 </template>
@@ -10,6 +10,15 @@
     import { Swipe, SwipeItem } from 'vue-swipe';
     import MySwipe from './../../components/MySwipe';
     export default {
+        data() {
+            return {
+                imgList:[
+                    '/img/photo/1.jpg',
+                    '/img/photo/2.jpg',
+                    '/img/photo/3.jpg'
+                ]
+            }
+        },
         components:{
             Swipe,
             SwipeItem,
