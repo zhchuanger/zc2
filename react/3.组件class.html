@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="root"></div>
+    <script src="react.development.js"></script>
+    <script src="react-dom.development.js"></script>
+    <script src="browser.min.js"></script>
+    <!-- jsx -->
+    <script type="text/babel">
+        //用class方式定义组件
+        //this.props.children 获取开始和闭合标签中间的内容
+        class Welcome extends React.Component {
+            render() {
+                return (
+                    <div>
+                        <h3>你好，{this.props.name}</h3>
+                        <p>{this.props.content}</p>
+                        {this.props.children}
+                    </div>
+                )
+            }
+        }
+
+        ReactDOM.render(
+            <Welcome name="赵闯" content="欢迎做客！">
+                <h1>嘻嘻嘻嘻嘻</h1>
+            </Welcome>,
+            document.getElementById('root')
+        )
+
+
+
+    </script>
+
+</body>
+
+</html>
