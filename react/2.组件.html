@@ -23,10 +23,27 @@
             props值不能修改
         
         */
-        const Welcome = (props) => {
-            return (
+        // const Welcome = (props) => {
+        //     return (
+        //         <div>
+        //             <h3>欢迎！{props.name}</h3>
+        //             <p>{props.content}</p>
+        //             {props.children}
+        //         </div>
+        //     )
+        // }
+
+        // ReactDOM.render(
+        //     <Welcome name="张三" content="你好啊！">hfihifgiewgh</Welcome>,
+        //     document.getElementById('root')
+
+        // )
+
+
+        const Welcome = (props)=>{
+            return(
                 <div>
-                    <h3>欢迎！{props.name}</h3>
+                    <h1>欢迎{props.name}</h1>
                     <p>{props.content}</p>
                     {props.children}
                 </div>
@@ -34,12 +51,11 @@
         }
 
         ReactDOM.render(
-            <Welcome name="张三" content="你好啊！">hfihifgiewgh</Welcome>,
+            <Welcome name="你们" content="inspiring">欲穷千里目，更上一层楼</Welcome>,
             document.getElementById('root')
-
         )
 
-  
+
 
 
 
