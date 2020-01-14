@@ -32,12 +32,13 @@
             width: 20px;
             height: 20px;
             border: 1px solid black;
-
         }
         .snake{
             width: 20px;
             height: 20px;
             background: rgb(0, 255, 255);
+            position:absolute;
+            top:64px;
         }
         .food{
             width: 20px;
@@ -72,22 +73,13 @@
             font-weight: bold;
             font-size: large;
         }
-    
-    
-    
     </style>
 </head>
 <body>
     <div id="container">
         <div id="map-panel">
             <table id="map-bg">
-        
-            </table>
-            <div class="snake"></div>
-            <div class="snake"></div>
-            <div class="snake"></div>
-            <div class="food"></div>
-            
+            </table>        
         </div>
         <div id="control-panel">
             <button class="btn">开始游戏</button>
@@ -98,6 +90,32 @@
         </div>
     </div>
 
+    <script>
+        //1.初始化地图
+        var oMapTable = document.getElementById('map-bg');
+        var oMapPanel = document.getElementById('map-panel');
+        for(var row=0;row<20;row++){//20行
+            var oTr = document.createElement('tr');
+            for(var col=0;col<30;col++){//30列
+                var oTd = document.createElement('td');
+                oTr.appendChild(oTd);//把创建td添加到刚创建的tr中
+            }
+            oMapTable.appendChild(oTr);//再把tr添加到table中
+        }
+
+        // 2.初始化蛇
+        var snakeBody=[];
+        for(var i=0;i<3;i++){
+            var oDiv = document.createElement('div');
+            oDiv.className = 'snake';
+            //左边距离跟i有关
+            oDiv.style.left = i * 20 + (i + 1) +'px';//0 20 40-1 22 43
+            oMapPanel.appendChild(oDiv);
+            snakeBody.push(oDiv);
+        }
     
+    
+    
+    </script>
 </body>
 </html>
