@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>贪吃蛇 </title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #container{
+            width: 1038px;
+            height: 650px;
+            background: url(img/bg.jpg);
+            margin: 0 auto ;/*块级元素水平居中*/
+            position: relative;
+        }
+        #map-panel{
+            width: 631px;
+            height: 421px;
+            background: #8bc34ad6;
+            position: absolute;
+            left: 90px;
+            top: 140px;
+        }
+        #map-bg{
+            border-collapse: collapse;
+        }
+        #map-bg td{
+            width: 20px;
+            height: 20px;
+            border: 1px solid black;
+
+        }
+        .snake{
+            width: 20px;
+            height: 20px;
+            background: rgb(0, 255, 255);
+        }
+        .food{
+            width: 20px;
+            height: 20px;
+            background: rgb(255, 255, 0);
+        }
+        #control-panel{
+            width: 196px;
+            height: 500px;
+            /* background: #ccc; */
+            position: absolute;
+            left: 800px;
+            top: 100px;
+            text-align: center;/*行级元素水平居中*/
+        }
+        .btn{
+            width: 178px;
+            height: 52px;
+            margin-bottom: 10px;
+            background: #8bc34ad6;
+            border:0;
+            font-weight: bold;
+            font-size: large;
+        }
+        #speed-panel{
+            width: 196px;
+            height: 204px;
+            line-height: 204px;
+            background:#8bc34ad6;
+            text-align: center;
+            margin-top: 20px;
+            font-weight: bold;
+            font-size: large;
+        }
+    
+    
+    
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="map-panel">
+            <table id="map-bg">
+        
+            </table>
+            <div class="snake"></div>
+            <div class="snake"></div>
+            <div class="snake"></div>
+            <div class="food"></div>
+            
+        </div>
+        <div id="control-panel">
+            <button class="btn">开始游戏</button>
+            <button class="btn">游戏设置</button>
+            <button class="btn">退出游戏</button>
+            <button class="btn">设置</button>
+            <div id="speed-panel">速度</div>
+        </div>
+    </div>
+
+    
+</body>
+</html>
