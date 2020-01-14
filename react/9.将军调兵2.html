@@ -15,47 +15,42 @@
     <script src="browser.min.js"></script>
     <!-- jsx -->
     <script type="text/babel">
-        //总组件Main
         class Main extends React.Component {
             constructor() {
                 super();
                 this.state = {
-                    rest: 120,
                     numA: 100,
-                    numB: 80
+                    numB: 80,
+                    rest: 120
                 }
                 this.changeNum = this.changeNum.bind(this);
             }
             changeNum(name, num) {
                 // console.log(name,num);
-                // 修改当前将军士兵值：
                 if (this.state.rest < num) {
-                    alert("士兵数量不足！");
+                    alert("士兵数量不足！！");
                     return;
                 }
                 this.setState({
                     ["num" + name]: this.state["num" + name] + num * 1,
                     rest: this.state.rest - num * 1
-
                 })
             }
             render() {
                 return (
                     <div>
-                        <h1>剩余士兵数量：{this.state.rest}</h1>
-                        <Gen name="A" number={this.state.numA} changeNum={this.changeNum}></Gen>
-                        <Gen name="B" number={this.state.numB} changeNum={this.changeNum}></Gen>
+                        <h1>剩余将军数量：{this.state.rest}</h1>
+                        <Gen name="A" num={this.state.numA} changeNum={this.changeNum}></Gen>
+                        <Gen name="B" num={this.state.numB} changeNum={this.changeNum}></Gen>
                     </div>
                 )
-
             }
         }
-        //子组件Gen
         class Gen extends React.Component {
             render() {
                 return (
                     <div>
-                        <p>将军{this.props.name}有多少士兵：{this.props.number}</p>
+                        <p>将军{this.props.name}有多少士兵：{this.props.num}</p>
                         <input type="number" ref={(input) => { this.myInput = input }} />
                         <button onClick={() => {
                             this.props.changeNum(this.props.name, this.myInput.value)
@@ -64,14 +59,10 @@
                 )
             }
         }
-
-
         ReactDOM.render(
             <Main></Main>,
             document.getElementById('root')
         )
-
-
 
 
 
