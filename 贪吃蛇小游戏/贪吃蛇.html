@@ -1,73 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>贪吃蛇 </title>
     <style>
-        *{
+        * {
             margin: 0;
             padding: 0;
         }
-        #container{
+
+        #container {
             width: 1038px;
             height: 650px;
             background: url(img/bg.jpg);
-            margin: 0 auto ;/*块级元素水平居中*/
+            margin: 0 auto;
+            /*块级元素水平居中*/
             position: relative;
         }
-        #map-panel{
+
+        #map-panel {
             width: 631px;
             height: 421px;
-            background: #8bc34ad6;
+            /* background: #8bc34ad6; */
             position: absolute;
             left: 90px;
             top: 140px;
         }
-        #map-bg{
+
+        #map-bg {
             border-collapse: collapse;
         }
-        #map-bg td{
+
+        #map-bg td {
             width: 20px;
             height: 20px;
-            border: 1px solid black;
+            border: 1px solid white;
         }
-        .snake{
+
+        .snake {
             width: 20px;
             height: 20px;
             background: rgb(0, 255, 255);
-            position:absolute;
-            top:64px;
+            position: absolute;
+            top: 64px;
         }
-        .food{
+
+        .food {
             width: 20px;
             height: 20px;
             background: rgb(255, 255, 0);
+            position: absolute;
         }
-        #control-panel{
+
+        #control-panel {
             width: 196px;
             height: 500px;
             /* background: #ccc; */
             position: absolute;
             left: 800px;
             top: 100px;
-            text-align: center;/*行级元素水平居中*/
+            text-align: center;
+            /*行级元素水平居中*/
         }
-        .btn{
+
+        .btn {
             width: 178px;
             height: 52px;
             margin-bottom: 10px;
-            background: #8bc34ad6;
-            border:0;
+            /* background: #8bc34ad6; */
+            border: 0;
             font-weight: bold;
             font-size: large;
         }
-        #speed-panel{
+
+        #speed-panel {
             width: 196px;
             height: 204px;
             line-height: 204px;
-            background:#8bc34ad6;
+            background: #f0f0f0;
             text-align: center;
             margin-top: 20px;
             font-weight: bold;
@@ -75,14 +88,15 @@
         }
     </style>
 </head>
+
 <body>
     <div id="container">
         <div id="map-panel">
             <table id="map-bg">
-            </table>        
+            </table>
         </div>
         <div id="control-panel">
-            <button class="btn">开始游戏</button>
+            <button class="btn" id="btn-start">开始游戏</button>
             <button class="btn">游戏设置</button>
             <button class="btn">退出游戏</button>
             <button class="btn">设置</button>
@@ -94,9 +108,10 @@
         //1.初始化地图
         var oMapTable = document.getElementById('map-bg');
         var oMapPanel = document.getElementById('map-panel');
-        for(var row=0;row<20;row++){//20行
+        var oBtnStart = document.getElementById('btn-start');
+        for (var row = 0; row < 20; row++) {//20行
             var oTr = document.createElement('tr');
-            for(var col=0;col<30;col++){//30列
+            for (var col = 0; col < 30; col++) {//30列
                 var oTd = document.createElement('td');
                 oTr.appendChild(oTd);//把创建td添加到刚创建的tr中
             }
@@ -104,18 +119,64 @@
         }
 
         // 2.初始化蛇
-        var snakeBody=[];
-        for(var i=0;i<3;i++){
+        var snakeBody = [];
+        for (var i = 0; i < 3; i++) {
             var oDiv = document.createElement('div');
             oDiv.className = 'snake';
             //左边距离跟i有关
-            oDiv.style.left = i * 20 + (i + 1) +'px';//0 20 40-1 22 43
+            oDiv.style.left = i * 20 + (i + 1) + 'px';//0 20 40-1 22 43
             oMapPanel.appendChild(oDiv);
             snakeBody.push(oDiv);
         }
-    
-    
-    
+        // 3.初始化食物
+        do {
+            var bFlag = true;//控制循环是否结束，为true代表找到了坐标，否则未找到
+            // 计算食物坐标
+            var iLeft = parseInt(Math.random() * 30);//0-29
+            iLeft = iLeft * 21 + 1;
+
+            var iTop = parseInt(Math.random() * 20);//0-19
+            iTop = iTop * 21 + 1;
+
+            // 判断是否和蛇身体重复
+            for (var i = 0; i < snakeBody.length; i++) {
+                if (snakeBody[i].offsetLeft == iLeft && snakeBody[i].offsetTop == iTop) {
+                    bFlag = false;
+                }
+            }
+            var oFood = document.createElement('div');
+            oFood.className = 'food';
+            oFood.style.left = iLeft + "px";
+            oFood.style.top = iTop + "px";
+
+            oMapPanel.appendChild(oFood);
+        } while (!bFlag);//为true循环
+
+        //开始游戏
+        oBtnStart.onclick = function () {
+            setInterval(function() {
+                for(var i=0;i<snakeBody.length;i++){
+                    snakeBody[i].style.left = snakeBody[i].offsetLeft + 21 +'px';
+                }
+
+                
+            }, 300);
+            
+        };
+        document.onkeydown = function(e){
+            e = e || window.event;//处理兼容
+            var key = e.which || e.keyCode;
+            if(key == 40){//下
+
+            }
+            
+            
+            
+        }
+
+
+
     </script>
 </body>
+
 </html>
