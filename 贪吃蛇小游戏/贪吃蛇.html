@@ -105,10 +105,15 @@
     </div>
 
     <script>
-        //1.初始化地图
+
         var oMapTable = document.getElementById('map-bg');
         var oMapPanel = document.getElementById('map-panel');
         var oBtnStart = document.getElementById('btn-start');
+
+        var direction = 'right';
+
+
+        //1.初始化地图
         for (var row = 0; row < 20; row++) {//20行
             var oTr = document.createElement('tr');
             for (var col = 0; col < 30; col++) {//30列
@@ -154,24 +159,27 @@
 
         //开始游戏
         oBtnStart.onclick = function () {
-            setInterval(function() {
-                for(var i=0;i<snakeBody.length;i++){
-                    snakeBody[i].style.left = snakeBody[i].offsetLeft + 21 +'px';
+            setInterval(function () {
+                for (var i = 0; i < snakeBody.length; i++) {
+                    snakeBody[i].style.left = snakeBody[i].offsetLeft + 21 + 'px';
                 }
 
-                
+
             }, 300);
-            
+
         };
-        document.onkeydown = function(e){
+        document.onkeydown = function (e) {
             e = e || window.event;//处理兼容
             var key = e.which || e.keyCode;
-            if(key == 40){//下
+            if (key == 40) {//下
+                // var snakeHead = snakeBody[0];//取出蛇头
+                // snakeHead.style.top = snakeHead.offsetTop + 21 +'px'; 
+                direction = 'down';
 
             }
-            
-            
-            
+
+
+
         }
 
 
