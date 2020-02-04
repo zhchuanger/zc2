@@ -125,7 +125,7 @@
 
         // 2.初始化蛇
         var snakeBody = [];
-        for (var i = 0; i < 3; i++) {
+        for (var i = 2;i >=0; i--) {
             var oDiv = document.createElement('div');
             oDiv.className = 'snake';
             //左边距离跟i有关
@@ -160,8 +160,13 @@
         //开始游戏
         oBtnStart.onclick = function () {
             setInterval(function () {
-                for (var i = 0; i < snakeBody.length; i++) {
-                    snakeBody[i].style.left = snakeBody[i].offsetLeft + 21 + 'px';
+                if (direction == "down") {
+                    var snakeHead = snakeBody[0];//取出蛇头
+                    snakeHead.style.top = snakeHead.offsetTop + 21 + 'px';
+                }
+                for (var i = 1; i < snakeBody.length; i++) {
+                    snakeBody[i].style.left = snakeBody[i-1].offsetLeft + 'px';
+                    snakeBody[i].style.top = snakeBody[i-1].offsetTop + 'px';
                 }
 
 
