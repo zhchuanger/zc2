@@ -103,7 +103,6 @@
             <div id="speed-panel">速度</div>
         </div>
     </div>
-
     <script>
 
         var oMapTable = document.getElementById('map-bg');
@@ -111,6 +110,7 @@
         var oBtnStart = document.getElementById('btn-start');
 
         var direction = 'right';
+        var timer, oFood;
 
 
         //1.初始化地图
@@ -125,66 +125,114 @@
 
         // 2.初始化蛇
         var snakeBody = [];
-        for (var i = 2;i >=0; i--) {
+        for (var i = 2; i >= 0; i--) {
             var oDiv = document.createElement('div');
             oDiv.className = 'snake';
             //左边距离跟i有关
             oDiv.style.left = i * 20 + (i + 1) + 'px';//0 20 40-1 22 43
             oMapPanel.appendChild(oDiv);
+            oDiv.pos = {//存值
+                left: i * 20 + (i + 1),
+                top: 64
+            };
             snakeBody.push(oDiv);
         }
+
         // 3.初始化食物
-        do {
-            var bFlag = true;//控制循环是否结束，为true代表找到了坐标，否则未找到
-            // 计算食物坐标
-            var iLeft = parseInt(Math.random() * 30);//0-29
-            iLeft = iLeft * 21 + 1;
+        function produceFood() {
+            do {
+                var bFlag = true;//控制循环是否结束，为true代表找到了坐标，否则未找到
+                // 计算食物坐标
+                var iLeft = parseInt(Math.random() * 30);//0-29
+                iLeft = iLeft * 21 + 1;
 
-            var iTop = parseInt(Math.random() * 20);//0-19
-            iTop = iTop * 21 + 1;
+                var iTop = parseInt(Math.random() * 20);//0-19
+                iTop = iTop * 21 + 1;
 
-            // 判断是否和蛇身体重复
-            for (var i = 0; i < snakeBody.length; i++) {
-                if (snakeBody[i].offsetLeft == iLeft && snakeBody[i].offsetTop == iTop) {
-                    bFlag = false;
+                // 判断是否和蛇身体重复
+                for (var i = 0; i < snakeBody.length; i++) {
+                    if (snakeBody[i].offsetLeft == iLeft && snakeBody[i].offsetTop == iTop) {
+                        bFlag = false;
+                    }
                 }
-            }
-            var oFood = document.createElement('div');
-            oFood.className = 'food';
-            oFood.style.left = iLeft + "px";
-            oFood.style.top = iTop + "px";
+                oFood = document.createElement('div');
+                oFood.className = 'food';
+                oFood.style.left = iLeft + "px";
+                oFood.style.top = iTop + "px";
+                oFood.pos = {
+                    left:iLeft,
+                    top:iTop
+                }
 
-            oMapPanel.appendChild(oFood);
-        } while (!bFlag);//为true循环
+                oMapPanel.appendChild(oFood);
+            } while (!bFlag);//为true循环
 
+        }
+        produceFood() ;
         //开始游戏
         oBtnStart.onclick = function () {
-            setInterval(function () {
-                if (direction == "down") {
-                    var snakeHead = snakeBody[0];//取出蛇头
-                    snakeHead.style.top = snakeHead.offsetTop + 21 + 'px';
-                }
-                for (var i = 1; i < snakeBody.length; i++) {
-                    snakeBody[i].style.left = snakeBody[i-1].offsetLeft + 'px';
-                    snakeBody[i].style.top = snakeBody[i-1].offsetTop + 'px';
-                }
-
-
-            }, 300);
-
+            if (!timer) {
+                timer = setInterval(function () {
+                    snakeMove();
+                }, 300);
+            }
         };
+        function snakeMove() {
+            if (direction == "down") {
+                var snakeHead = snakeBody[0];//取出蛇头
+                snakeHead.style.top = snakeHead.offsetTop + 21 + 'px';
+            } else if (direction == "right") {
+                var snakeHead = snakeBody[0];//取出蛇头
+                snakeHead.style.left = snakeHead.offsetLeft + 21 + 'px';
+            } else if (direction == "up") {
+                var snakeHead = snakeBody[0];//取出蛇头
+                snakeHead.style.top = snakeHead.offsetTop - 21 + 'px';
+            } else if (direction == "left") {
+                var snakeHead = snakeBody[0];//取出蛇头
+                snakeHead.style.left = snakeHead.offsetLeft - 21 + 'px';
+            }
+            // 让蛇身往后的部分向身体的前一节移动，蛇头单独处理
+            for (var i = 1; i < snakeBody.length; i++) {
+                snakeBody[i].style.left = snakeBody[i - 1].pos.left + 'px';
+                snakeBody[i].style.top = snakeBody[i - 1].pos.top + 'px';
+            }
+            //将蛇移动后的当前位置更新
+            for (var i = 0; i < snakeBody.length; i++) {
+                snakeBody[i].pos.left = snakeBody[i].offsetLeft;
+                snakeBody[i].pos.top = snakeBody[i].offsetTop;
+            }
+            //蛇吃食物
+            if (snakeHead.offsetLeft == oFood.offsetLeft &&
+                snakeHead.offsetTop == oFood.offsetTop) {
+                    oFood.className = 'snake';
+                    snakeBody.push(oFood);
+                    produceFood()
+
+            }
+
+        }
         document.onkeydown = function (e) {
             e = e || window.event;//处理兼容
             var key = e.which || e.keyCode;
             if (key == 40) {//下
-                // var snakeHead = snakeBody[0];//取出蛇头
-                // snakeHead.style.top = snakeHead.offsetTop + 21 +'px'; 
-                direction = 'down';
+                if (direction != 'up') {
+                    direction = "down"
+                }
+            } else if (key == 39) {
+                if (direction != 'left') {
+                    direction = "right";
+                }
+            } else if (key == 38) {
+                if (direction != 'down') {
+                    direction = "up";
+                }
+            } else if (key == 37) {
+                if (direction != 'right') {
+                    direction = "left";
+                }
 
             }
-
-
-
+            snakeMove();
         }
 
 

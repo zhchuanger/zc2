@@ -1,4 +1,37 @@
 遇到的问题：
 1.蛇头、蛇身、蛇尾 ，开始游戏时，三个小方块都重合在蛇头；
-蛇身应该在蛇头位置，蛇尾应该在蛇身的位置，而此时蛇身的位置位于蛇头
+蛇身应该在蛇头位置，蛇尾应该在当前蛇身的位置，而此时蛇身的位置位于蛇头
 所以，蛇头蛇身蛇尾此时都聚集在蛇头位置；
+解决办法：每一次移动之前，应该把当前位置存起来 
+oDiv.pos = {//存值
+                left:i * 20 + (i + 1) ,
+                top:64
+            };
+for (var i = 1; i < snakeBody.length; i++) {
+                    snakeBody[i].style.left = snakeBody[i-1].pos.left+ 'px';
+                    snakeBody[i].style.top = snakeBody[i-1].pos.top + 'px';
+                }
+
+2.生成的三个小方块，蛇头位置并不是想要的蛇头位置；
+解决办法：for (var i = 2;i >=0; i--)
+3.如果当前蛇正在向右移动，此时要按下向左移动键，不可移动；
+解决办法：判断：if (key == 40) {//下
+                    if(direction != 'up'){
+                        direction = "down"
+                }
+}
+4.蛇的移动是定时器来完成，方向是keydown来完成
+5.定时器只开一次，不能每次点开始游戏都要执行；
+解决办法：var timer;
+        oBtnStart.onclick = function () {
+            if (!timer) {
+                timer = setInterval(function () {
+                    snakeMove();
+                }, 300);
+            }
+        };
+6.蛇只能吃一次食物，再次吃食物；吃不到；
+解决办法：oFood.pos = {
+                    left:iLeft,
+                    top:iTop
+                }
