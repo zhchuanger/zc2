@@ -1,0 +1,167 @@
+<html>
+
+<head>
+    <title>洗衣机</title>
+</head>
+
+<body style="background-image:url(https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1585886725987&di=6cd1ab076135b1f635217148823948a5&imgtype=0&src=http%3A%2F%2Fhbimg.b0.upaiyun.com%2F0f94e07f112d9257dfb19c22aaec2348f0d791674b763-zyqOmg_fw658);
+background-repeat:no-repeat">
+    <h1>智能洗衣机的模糊控制</h1>
+    <hr>
+    <center>
+        <form name="myform" action="" method=post>
+            <table>
+                <tr>
+                    <td>布&nbsp&nbsp&nbsp&nbsp量:</td>
+                    <td>
+                        <input name="bl" id="bl1" type="radio" value="bl1">少
+                        <input name="bl" id="bl2" type="radio" value="bl2">中
+                        <input name="bl" id="bl3" type="radio" value="bl3">多
+                    </td>
+                </tr>
+                <tr>
+                    <td>布&nbsp&nbsp质:</td>
+                    <td>
+                        <input name="bz" id="bz1" type="radio" value="bz1">化纤
+                        <input name="bz" id="bz2" type="radio" value="bz2">棉布
+                    </td>
+                </tr>
+                <tr>
+                    <td>脏污程度:</td>
+                    <td>
+                        <input name="zw" id="zw1" type="radio" value="zw1">轻
+                        <input name="zw" id="zw2" type="radio" value="zw2">中
+                        <input name="zw" id="zw3" type="radio" value="zw3">重
+                    </td>
+                </tr>
+                <td>脏污性质:</td>
+                <td>
+                    <input name="zd" id="zd1" type="radio" value="zd1">泥性
+                    <input name="zd" id="zd2" type="radio" value="zd2">中性
+                    <input name="zd" id="zd3" type="radio" value="zd3">油性
+                </td>
+                </tr>
+                <tr>
+                    <td>水温:</td>
+                    <td>
+                        <input name="sw" id="sw1" type="radio" value="sw1">低
+                        <input name="sw" id="sw2" type="radio" value="sw2">中
+                        <input name="sw" id="sw3" type="radio" value="sw3">高
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <input type="button" value="模糊推理控制" onClick="return tl()" />
+                    </td>
+                </tr>
+
+            </table>
+        </form>
+        <hr>
+        <table>
+            <tr>
+                <td>洗涤剂量：</td>
+                <td id="tl1"></td>
+            </tr>
+            <tr>
+                <td>水位：</td>
+                <td id="tl2"></td>
+            </tr>
+            <tr>
+                <td>水流强度：</td>
+                <td id="tl3"></td>
+            </tr>
+            <tr>
+                <td>洗涤时间：</td>
+                <td id="tl4"></td>
+            </tr>
+            <tr>
+                <td>脱水时间：</td>
+                <td id="tl5"></td>
+            </tr>
+
+            <script>
+                function tl() {
+
+                    var bl1 = document.getElementById("bl1");
+
+                    var bl2 = document.getElementById("bl2");
+
+                    var bl3 = document.getElementById("bl3");
+
+                    var bz1 = document.getElementById("bz1");
+
+                    var bz2 = document.getElementById("bz2");
+
+                    var zw1 = document.getElementById("zw1");
+
+                    var zw2 = document.getElementById("zw2");
+
+                    var zw3 = document.getElementById("zw3");
+
+                    var zd1 = document.getElementById("zd1");
+
+                    var zd2 = document.getElementById("zd2");
+
+                    var zd3 = document.getElementById("zd3");
+
+                    var sw1 = document.getElementById("sw1");
+
+                    var sw2 = document.getElementById("sw2");
+
+                    var sw3 = document.getElementById("sw3");
+
+                    var tl1 = document.getElementById("tl1");
+
+                    var tl2 = document.getElementById("tl2");
+
+                    var tl3 = document.getElementById("tl3");
+
+                    var tl4 = document.getElementById("tl4");
+
+                    var tl5 = document.getElementById("tl5");
+
+                    var sj = 35
+                    if (bl1.checked) { sj = sj - 5; tl1.innerHTML = "少"; }
+                    if (bl2.checked) { tl1.innerHTML = "中"; }
+                    if (bl3.checked) { sj = sj + 5; tl1.innerHTML = "多"; }
+
+                    if (bz1.checked) { sj = sj - 5; }
+                    if (bz2.checked) { sj = sj + 5; }
+
+
+                    if (bl1.checked && bz1.checked) { tl2.innerHTML = "少"; }
+                    if (bl1.checked && bz2.checked) { tl2.innerHTML = "低"; }
+                    if (bl2.checked && bz1.checked) { tl2.innerHTML = "低"; }
+                    if (bl2.checked && bz2.checked) { tl2.innerHTML = "中"; }
+                    if (bl3.checked && bz1.checked) { tl2.innerHTML = "中"; }
+                    if (bl3.checked && bz2.checked) { tl2.innerHTML = "高"; }
+
+                    if (bl1.checked && bz1.checked) { tl3.innerHTML = "弱"; }
+                    if (bl1.checked && bz2.checked) { tl3.innerHTML = "中"; }
+                    if (bl2.checked && bz1.checked) { tl3.innerHTML = "中"; }
+                    if (bl2.checked && bz2.checked) { tl3.innerHTML = "强"; }
+                    if (bl3.checked && bz1.checked) { tl3.innerHTML = "强"; }
+                    if (bl3.checked && bz2.checked) { tl3.innerHTML = "强"; }
+
+                    if (sw1.checked) { sj = sj + 5; tl5.innerHTML = "3分钟"; }
+                    if (sw2.checked) { tl5.innerHTML = "4分钟"; }
+                    if (sw3.checked) { sj = sj - 5; tl5.innerHTML = "5分钟"; }
+
+                    if (zw1.checked && zd1.checked) { sj = sj - 10; tl4.innerHTML = sj + "分钟"; }
+                    if (zw1.checked && zd2.checked) { sj = sj - 5; tl4.innerHTML = sj + "分钟"; }
+                    if (zw1.checked && zd3.checked) { sj = sj; tl4.innerHTML = sj + "分钟"; }
+                    if (zw2.checked && zd1.checked) { sj = sj - 5; tl4.innerHTML = sj + "分钟"; }
+                    if (zw2.checked && zd2.checked) { sj = sj; tl4.innerHTML = sj + "分钟"; }
+                    if (zw2.checked && zd3.checked) { sj = sj + 5; tl4.innerHTML = sj + "分钟"; }
+                    if (zw3.checked && zd1.checked) { sj = sj; tl4.innerHTML = sj + "分钟"; }
+                    if (zw3.checked && zd2.checked) { sj = sj + 5; tl4.innerHTML = sj + "分钟"; }
+                    if (zw3.checked && zd3.checked) { sj = sj + 10; tl4.innerHTML = sj + "分钟"; }
+
+
+                }
+
+            </script>
+
+</html>
